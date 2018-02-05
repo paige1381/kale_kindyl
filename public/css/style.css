@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "Tex Gyre Adventor";
+  src: url("./tex-gyre-adventor/texgyreadventor-regular.otf");
+}
+
+@font-face {
+  font-family: "Tex Gyre Adventor Italic";
+  src: url("./tex-gyre-adventor/texgyreadventor-italic.otf");
+}
+
+@font-face {
+  font-family: "Tex Gyre Adventor Bold";
+  src: url("./tex-gyre-adventor/texgyreadventor-bold.otf");
+}
+
+body {
+  margin: 0;
+  font-family: "Tex Gyre Adventor Bold";
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  opacity: .6;
+}
+
+header {
+  width: 900px;
+  height: 200px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px black solid;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+nav {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+#title {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+#home, #about, #contact, #credit {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  margin: auto;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.home-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-start;
+  margin: auto;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.home-col {
+  height: 535px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-img {
+  opacity: .85;
+}
+
+.home-img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#img-1 {
+  display: flex;
+  width: 242.5px;
+  height: 190px;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+#img-2 {
+  display: flex;
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+#img-3 {
+  display: flex;
+  width: 200px;
+  height: 230px;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+#img-4 {
+  display: flex;
+  width: 242.5px;
+  height: 340px;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+#about {
+  background-color: black;
+  color: white;
+  padding: 70px 50px;
+  opacity: .85;
+  letter-spacing: 2px;
+  font-size: 15px;
+  flex-direction: row;
+  align-items: flex-end;
+  font-family: "Tex Gyre Adventor";
+}
+
+#about-img {
+  width: 275px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 40px;
+}
+
+#about h4 {
+  display: inline;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+#about p {
+  display: inline;
+}
+
+#contact {
+  border: 3px black solid;
+  text-transform: uppercase;
+  justify-content: center;
+  letter-spacing: 3px;
+  font-size: 20px;
+  padding: 20px;
+  height: 200px;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#contact > h3 {
+  margin-right: 20px;
+  font-family: "Tex Gyre Adventor Italic";
+}
+
+#icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#icons a {
+  height: 60px;
+  width: 60px;
+  margin-left: 20px;
+}
+
+#credit {
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: .8;
+}
+
+#credit > h6 {
+  margin: 0;
+}
