@@ -28,9 +28,18 @@ a:hover {
 }
 
 header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  left: 0;
+  background-color: white;
+}
+
+#header {
   width: 900px;
   height: 200px;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -56,13 +65,17 @@ nav {
   letter-spacing: 5px;
 }
 
+main {
+  margin-top: 300px;
+}
+
 #home, #about, #contact, #credit {
   display: flex;
   flex-direction: column;
   width: 900px;
   margin: auto;
   box-sizing: border-box;
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .home-row {
@@ -188,8 +201,15 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   opacity: .8;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 #credit > h6 {
   margin: 0;
+}
+
+/*Desktop*/
+@media (min-width: 1000px) {
+
 }
