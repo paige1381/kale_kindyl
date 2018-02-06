@@ -1,4 +1,4 @@
-const app = angular.module('kale-kindyl', ['duScroll']).value('duScrollOffset', 300);
+const app = angular.module('kale-kindyl', []);
 
 app.controller('MainController', ['$http', function($http) {
 
