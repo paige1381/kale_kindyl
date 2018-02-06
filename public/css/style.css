@@ -69,10 +69,9 @@ header {
   align-items: flex-start;
   margin: auto;
   box-sizing: border-box;
-  justify-content: space-between;
 }
 
-.home-col {
+.home-col, .bio-col {
   flex-direction: column;
   display: flex;
   justify-content: space-between;
@@ -81,16 +80,11 @@ header {
 }
 
 .home-img {
-  opacity: .85;
   width: 100%;
   height: 350px;
   object-fit: cover;
   margin-bottom: 10px;
-}
-
-.home-img:hover {
-  opacity: 1;
-  cursor: pointer;
+  box-sizing: border-box;
 }
 
 #bio {
@@ -204,6 +198,55 @@ header {
   display: none;
 }
 
+/*Tablet*/
+@media (min-width: 600px) {
+  #header {
+    width: 580px;
+  }
+
+  .home-row {
+    flex-direction: row;
+    width: 580px;
+    justify-content: space-between;
+  }
+
+  .big-col {
+    width: 300px;
+  }
+
+  .sm-col {
+    width: 260px;
+  }
+
+  #img-1 {
+    height: 275px;
+  }
+
+  #img-2 {
+    height: 385px;
+  }
+
+  #img-3 {
+    height: 315px;
+  }
+
+  #img-4 {
+    height: 425px;
+  }
+
+  .bio-col {
+    width: 580px;
+  }
+
+  #contact {
+    width: 580px;
+  }
+
+  #credit {
+    width: 580px;
+  }
+}
+
 /*Desktop*/
 @media (min-width: 1000px) {
   .desktop {
@@ -232,7 +275,7 @@ header {
     align-items: center;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   #title {
@@ -240,7 +283,7 @@ header {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 32px;
+    font-size: 36px;
   }
 
   #home, #about, #contact, #credit {
@@ -259,18 +302,20 @@ header {
     align-items: flex-start;
     margin: auto;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .home-col {
     height: 705px;
     flex-direction: column;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .home-img {
     opacity: .85;
+    margin: 5px 5px 0 0;
+    box-sizing: border-box;
   }
 
   .home-img:hover {
@@ -279,32 +324,28 @@ header {
   }
 
   #img-1 {
-    display: flex;
-    width: 303.5px;
+    /*width: 303.5px;*/
     height: 275px;
     object-fit: cover;
     box-sizing: border-box;
   }
 
   #img-2 {
-    display: flex;
-    width: 260.5px;
+    /*width: 260.5px;*/
     height: 385px;
     object-fit: cover;
     box-sizing: border-box;
   }
 
   #img-3 {
-    display: flex;
-    width: 260.5px;
+    /*width: 260.5px;*/
     height: 315px;
     object-fit: cover;
     box-sizing: border-box;
   }
 
   #img-4 {
-    display: flex;
-    width: 303.5px;
+    /*width: 303.5px;*/
     height: 425px;
     object-fit: cover;
     box-sizing: border-box;
@@ -313,10 +354,11 @@ header {
   #bio {
     display: flex;
     flex-direction: column;
-    width: 305.5px;
+    /*width: 303.5px;*/
     align-items: center;
     padding: 0 20px 0 50px;
     box-sizing: border-box;
+    margin: 0;
   }
 
   #bio-img {
