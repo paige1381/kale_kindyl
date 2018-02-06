@@ -2,6 +2,7 @@
 <html ng-app="kale-kindyl">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
@@ -20,6 +21,17 @@
         </nav>
       </div>
     </header>
+
+    <div id="menu" class="tablet mobile">
+      <i class="material-icons" ng-click="ctrl.menu = !ctrl.menu">menu</i>
+    </div>
+    <nav ng-class="ctrl.menu? 'slide' : ''" class="slide-nav tablet mobile">
+      <a href="#" ng-click="ctrl.menu = false"><h3>Home</h3></a>
+      <a href="#" ng-click="ctrl.menu = false"><h3>Recipes</h3></a>
+      <a href="#" ng-click="ctrl.menu = false"><h3>About</h3></a>
+    </nav>
+
+
 
     <main>
       <section id="home">
