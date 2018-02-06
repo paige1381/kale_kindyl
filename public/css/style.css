@@ -29,50 +29,34 @@ a:hover {
 
 header {
   width: 100%;
-  /*position: fixed;
-  top: 0;
-  z-index: 5;
-  left: 0;
-  background-color: white;*/
 }
 
 #header {
-  width: 900px;
-  height: 200px;
+  width: 80%;
+  height: 350px;
   margin: 50px auto 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   border: 3px black solid;
-  padding: 20px;
+  padding: 30px;
   box-sizing: border-box;
-}
-
-nav {
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+  flex-wrap: wrap;
+  font-size: 30px;
 }
 
 #title {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 5px;
+  width: 100%;
 }
-
-/*main {
-  margin-top: 300px;
-}*/
 
 #home, #about, #contact, #credit {
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 100%;
   margin: auto;
   box-sizing: border-box;
   margin-top: 50px;
@@ -80,7 +64,7 @@ nav {
 
 .home-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   align-items: flex-start;
   margin: auto;
@@ -89,14 +73,19 @@ nav {
 }
 
 .home-col {
-  height: 535px;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .home-img {
   opacity: .85;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .home-img:hover {
@@ -104,36 +93,41 @@ nav {
   cursor: pointer;
 }
 
-#img-1 {
+#bio {
   display: flex;
-  width: 242.5px;
-  height: 190px;
-  object-fit: cover;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
   box-sizing: border-box;
+  margin: 50px 0;
 }
 
-#img-2 {
-  display: flex;
-  width: 200px;
-  height: 300px;
+#bio-img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
-  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
-#img-3 {
-  display: flex;
-  width: 200px;
-  height: 230px;
-  object-fit: cover;
-  box-sizing: border-box;
+#bio h4 {
+  text-transform: uppercase;
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: 2px;
 }
 
-#img-4 {
-  display: flex;
-  width: 242.5px;
-  height: 340px;
-  object-fit: cover;
-  box-sizing: border-box;
+#bio p {
+  font-family: "Tex Gyre Adventor";
+  margin: 0;
+  letter-spacing: .5px;
+  font-size: 20px;
+}
+
+#bio a {
+  letter-spacing: .5px;
+  align-self: flex-start;
+  font-size: 20px;
 }
 
 #about {
@@ -168,13 +162,11 @@ nav {
 }
 
 #contact {
+  width: 80%;
   border: 3px black solid;
-  text-transform: uppercase;
   justify-content: center;
-  letter-spacing: 3px;
-  font-size: 20px;
-  padding: 20px;
-  height: 200px;
+  padding: 30px;
+  height: 100px;
   flex-direction: row;
   align-items: center;
   margin-bottom: 5px;
@@ -182,7 +174,7 @@ nav {
 
 #contact > h3 {
   margin-right: 20px;
-  font-family: "Tex Gyre Adventor Italic";
+  font-family: "Tex Gyre Adventor";
 }
 
 #icons {
@@ -194,12 +186,11 @@ nav {
 #icons a {
   height: 60px;
   width: 60px;
-  margin-left: 20px;
 }
 
 #credit {
-  flex-direction: row;
-  justify-content: space-between;
+  width: 80%;
+  flex-direction: column;
   opacity: .8;
   margin-top: 0;
   margin-bottom: 50px;
@@ -209,7 +200,224 @@ nav {
   margin: 0;
 }
 
+.desktop {
+  display: none;
+}
+
 /*Desktop*/
 @media (min-width: 1000px) {
+  .desktop {
+    display: flex;
+  }
 
+  #header {
+    width: 1150px;
+    height: 200px;
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px black solid;
+    padding: 30px;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+  }
+
+  nav {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 22px;
+  }
+
+  #title {
+    width: 60%;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 32px;
+  }
+
+  #home, #about, #contact, #credit {
+    display: flex;
+    flex-direction: column;
+    width: 1150px;
+    margin: auto;
+    box-sizing: border-box;
+    margin-top: 50px;
+  }
+
+  .home-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    margin: auto;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+
+  .home-col {
+    height: 705px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .home-img {
+    opacity: .85;
+  }
+
+  .home-img:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  #img-1 {
+    display: flex;
+    width: 303.5px;
+    height: 275px;
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  #img-2 {
+    display: flex;
+    width: 260.5px;
+    height: 385px;
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  #img-3 {
+    display: flex;
+    width: 260.5px;
+    height: 315px;
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  #img-4 {
+    display: flex;
+    width: 303.5px;
+    height: 425px;
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  #bio {
+    display: flex;
+    flex-direction: column;
+    width: 305.5px;
+    align-items: center;
+    padding: 0 20px 0 50px;
+    box-sizing: border-box;
+  }
+
+  #bio-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  #bio h4 {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: 3px;
+    font-size: 18px;
+  }
+
+  #bio p {
+    font-family: "Tex Gyre Adventor";
+    margin: 0;
+    letter-spacing: .5px;
+    font-size: 16px;
+  }
+
+  #bio a {
+    letter-spacing: .5px;
+    align-self: flex-start;
+    font-size: 16px;
+  }
+
+  #about {
+    background-color: black;
+    color: white;
+    padding: 70px 50px;
+    opacity: .85;
+    letter-spacing: 2px;
+    font-size: 15px;
+    flex-direction: row;
+    align-items: flex-end;
+    font-family: "Tex Gyre Adventor";
+  }
+
+  #about-img {
+    width: 275px;
+    height: 275px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 40px;
+  }
+
+  #about h4 {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  #about p {
+    display: inline;
+  }
+
+  #contact {
+    border: 3px black solid;
+    text-transform: uppercase;
+    justify-content: center;
+    letter-spacing: 3px;
+    font-size: 18px;
+    padding: 20px;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  #contact > h3 {
+    margin-right: 20px;
+    font-family: "Tex Gyre Adventor";
+  }
+
+  #icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #icons a {
+    height: 60px;
+    width: 60px;
+    margin-left: 20px;
+  }
+
+  #credit {
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: .8;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+  #credit > h6 {
+    margin: 0;
+  }
 }
