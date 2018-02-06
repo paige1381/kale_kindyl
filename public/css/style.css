@@ -87,13 +87,20 @@ header {
   box-sizing: border-box;
 }
 
+.bio-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 40px auto 0 auto;
+}
+
 #bio {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
-  margin: 50px 0;
 }
 
 #bio-img {
@@ -166,11 +173,6 @@ header {
   margin-bottom: 5px;
 }
 
-#contact > h3 {
-  margin-right: 20px;
-  font-family: "Tex Gyre Adventor";
-}
-
 #icons {
   display: flex;
   flex-direction: row;
@@ -236,6 +238,19 @@ header {
 
   .bio-col {
     width: 580px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #bio {
+    align-items: flex-start;
+    width: 260px;
+  }
+
+  #bio-img {
+    width: 300px;
+    height: 300px;
+    margin: 0;
   }
 
   #contact {
@@ -253,18 +268,15 @@ header {
     display: flex;
   }
 
+  .mobile, .tablet {
+    display: none;
+  }
+
   #header {
-    width: 1150px;
+    width: 980px;
     height: 200px;
-    margin: 50px auto 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border: 3px black solid;
-    padding: 30px;
-    box-sizing: border-box;
     flex-wrap: nowrap;
+    align-items: center;
   }
 
   nav {
@@ -280,42 +292,20 @@ header {
 
   #title {
     width: 60%;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 5px;
     font-size: 36px;
   }
 
   #home, #about, #contact, #credit {
-    display: flex;
-    flex-direction: column;
-    width: 1150px;
-    margin: auto;
-    box-sizing: border-box;
-    margin-top: 50px;
+    width: 980px;
   }
 
   .home-row {
-    display: flex;
-    flex-direction: row;
     width: 100%;
-    align-items: flex-start;
-    margin: auto;
-    box-sizing: border-box;
-    justify-content: flex-start;
-  }
-
-  .home-col {
-    height: 705px;
-    flex-direction: column;
-    display: flex;
-    justify-content: flex-start;
+    margin: 0;
   }
 
   .home-img {
     opacity: .85;
-    margin: 5px 5px 0 0;
-    box-sizing: border-box;
   }
 
   .home-img:hover {
@@ -323,74 +313,63 @@ header {
     cursor: pointer;
   }
 
+  .big-col {
+    width: 260px;
+    margin: 0;
+  }
+
+  .sm-col {
+    width: 220px;
+    margin: 0;
+  }
+
   #img-1 {
-    /*width: 303.5px;*/
     height: 275px;
-    object-fit: cover;
-    box-sizing: border-box;
   }
 
   #img-2 {
-    /*width: 260.5px;*/
     height: 385px;
-    object-fit: cover;
-    box-sizing: border-box;
   }
 
   #img-3 {
-    /*width: 260.5px;*/
     height: 315px;
-    object-fit: cover;
-    box-sizing: border-box;
   }
 
   #img-4 {
-    /*width: 303.5px;*/
     height: 425px;
-    object-fit: cover;
-    box-sizing: border-box;
   }
 
-  #bio {
-    display: flex;
+  .bio-col {
+    width: 250px;
     flex-direction: column;
-    /*width: 303.5px;*/
-    align-items: center;
-    padding: 0 20px 0 50px;
-    box-sizing: border-box;
     margin: 0;
   }
 
   #bio-img {
-    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+  }
+
+  #bio {
     width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 20px;
   }
 
   #bio h4 {
-    text-transform: uppercase;
+    letter-spacing: 2px;
     font-size: 20px;
-    margin: 0;
-    letter-spacing: 3px;
-    font-size: 18px;
   }
 
   #bio p {
-    font-family: "Tex Gyre Adventor";
-    margin: 0;
     letter-spacing: .5px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   #bio a {
     letter-spacing: .5px;
-    align-self: flex-start;
     font-size: 16px;
   }
 
-  #about {
+  /*#about {
     background-color: black;
     color: white;
     padding: 70px 50px;
@@ -419,47 +398,32 @@ header {
 
   #about p {
     display: inline;
-  }
+  }*/
 
   #contact {
-    border: 3px black solid;
     text-transform: uppercase;
     justify-content: center;
     letter-spacing: 3px;
     font-size: 18px;
-    padding: 20px;
-    height: 100px;
-    flex-direction: row;
+    height: 175px;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 5px;
+    margin-top: 40px;
   }
 
   #contact > h3 {
-    margin-right: 20px;
-    font-family: "Tex Gyre Adventor";
+    /*font-family: "Tex Gyre Adventor";*/
+    font-size: 26px;
+    margin: 0 0 15px 0;
   }
 
   #icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    width: 250px;
   }
 
   #icons a {
     height: 60px;
     width: 60px;
-    margin-left: 20px;
-  }
-
-  #credit {
-    flex-direction: row;
-    justify-content: space-between;
-    opacity: .8;
-    margin-top: 0;
-    margin-bottom: 50px;
-  }
-
-  #credit > h6 {
-    margin: 0;
   }
 }
