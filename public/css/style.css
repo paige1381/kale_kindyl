@@ -103,7 +103,7 @@ header {
   width: 100%;
 }
 
-#home, #about, #recipes, #contact, #credit {
+#home, #about, #recipes, #contact, #credit, #recipe {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -477,7 +477,7 @@ header {
     font-size: 36px;
   }
 
-  #home, #about, #contact, #credit, #recipes{
+  #home, #about, #contact, #credit, #recipes, #recipe {
     width: 980px;
   }
 
@@ -521,16 +521,19 @@ header {
     height: 425px;
   }
 
-  #recipes {
+  #recipes, #recipe {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
   .recipe-rows {
     width: 730px;
+    margin: 0;
+    box-sizing: border-box;
   }
 
-  #recipes h2 {
+  #recipes h2, #recipe h2 {
     width: 720px;
     margin: 0 0 20px 0;
   }
@@ -551,6 +554,10 @@ header {
 
   .recipe-card h3 {
     font-size: 18px;
+  }
+
+  .recipe-img-3 {
+    width: 435px;
   }
 
   .bio-col {
