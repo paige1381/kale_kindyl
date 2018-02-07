@@ -129,12 +129,13 @@ header {
   width: 80%;
 }
 
-.home-img, .recipe-img {
+.home-img, .recipe-img, .recipe-img-1, .recipe-img-2, .recipe-img-3, .recipe-img-4 {
   width: 100%;
   height: 350px;
   object-fit: cover;
   margin-bottom: 10px;
   box-sizing: border-box;
+  display:block
 }
 
 .bio-col {
@@ -181,7 +182,7 @@ header {
   font-size: 20px;
 }
 
-#recipes h2 {
+.recipe-rows h2 {
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -214,6 +215,55 @@ header {
   margin: 0 0 50px 0;
   font-size: 20px;
   letter-spacing: 2px;
+}
+
+.recipe-rows p, .recipe-section-4 li {
+  font-family: "Tex Gyre Adventor";
+  letter-spacing: .5px;
+  margin: 0 0 10px 0;
+}
+
+.recipe-section-4 h2 {
+  font-size: 24px;
+  margin: 30px 0;
+}
+
+#recipe-tags span {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, .85);
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+  margin: 2px;
+  box-sizing: border-box;
+  letter-spacing: 1.75px;
+  font-family: "Tex Gyre Adventor";
+}
+
+#prep li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+#ingredients h3, #directions h3 {
+  margin: 30px 0 10px 0;
+}
+
+#prep, .ingredient-list, .directions-list {
+  padding-left: 30px;
+}
+
+.ingredient-list li {
+  margin-bottom: 5px;
+}
+
+#prep {
+  border: 1px solid black;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 30px 0;
 }
 
 #about {
