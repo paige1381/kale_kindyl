@@ -161,7 +161,7 @@ header {
   margin-bottom: 20px;
 }
 
-#bio h4 {
+#bio > h4 {
   text-transform: uppercase;
   font-size: 24px;
   margin: 0;
@@ -204,7 +204,7 @@ header {
 .recipe-card h3 {
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
   font-size: 26px;
   margin: 0 0 50px 0;
   font-family: "Tex Gyre Adventor";
@@ -404,7 +404,7 @@ header {
     font-size: 36px;
   }
 
-  #home, #about, #contact, #credit, #recipes {
+  #home, #about, #contact, #credit, #recipes{
     width: 980px;
   }
 
@@ -413,11 +413,11 @@ header {
     margin: 0;
   }
 
-  .home-img {
+  .home-img, .recipe-img {
     opacity: .85;
   }
 
-  .home-img:hover {
+  .home-img:hover, .recipe-img:hover {
     opacity: 1;
     cursor: pointer;
   }
@@ -454,12 +454,12 @@ header {
   }
 
   .recipe-rows {
-    width: 740px;
+    width: 730px;
   }
 
   #recipes h2 {
-    width: 730px;
-    margin: 0 auto 20px auto;
+    width: 720px;
+    margin: 0 0 20px 0;
   }
 
   .recipe-rows > h4 {
@@ -472,8 +472,8 @@ header {
   }
 
   .recipe-card {
-    width: 175px;
-    margin: 0 5px;
+    width: 172.5px;
+    margin: 0 10px 0 0;
   }
 
   .recipe-card h3 {
