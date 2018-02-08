@@ -16,6 +16,10 @@ app.controller('RecipesController', function() {
 
 })
 
+app.controller('RecipeTypeController', function() {
+
+})
+
 app.controller('RecipeController', function() {
 
 })
@@ -39,6 +43,12 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
   $routeProvider.when('/recipes', {
     templateUrl: 'recipes.html',
     controller: 'RecipesController',
+    controllerAs: 'ctrl'
+  });
+
+  $routeProvider.when('/recipetype', {
+    templateUrl: 'recipetype.html',
+    controller: 'RecipeTypeController',
     controllerAs: 'ctrl'
   });
 
