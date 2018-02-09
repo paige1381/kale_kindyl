@@ -8,6 +8,10 @@ app.controller('HomeController', function() {
 
 })
 
+app.controller('CreateController', function() {
+
+})
+
 app.controller('AboutController', function() {
 
 })
@@ -31,6 +35,12 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
   $routeProvider.when('/home', {
     templateUrl: 'home.html',
     controller: 'HomeController',
+    controllerAs: 'ctrl'
+  });
+
+  $routeProvider.when('/create', {
+    templateUrl: 'create.html',
+    controller: 'CreateController',
     controllerAs: 'ctrl'
   });
 
