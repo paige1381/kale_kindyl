@@ -420,6 +420,17 @@ select {
   background-color: white;
 }
 
+button {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .desktop {
   display: none;
 }
@@ -531,9 +542,7 @@ select {
 
   .textarea-1 {
     width: 285px;
-
   }
-
 }
 
 /*Desktop*/
@@ -587,7 +596,7 @@ select {
     opacity: .85;
   }
 
-  .home-img:hover, .recipe-img:hover {
+  .home-img:hover, .recipe-link:hover, .recipe-img:hover {
     opacity: 1;
     cursor: pointer;
   }
