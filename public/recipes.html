@@ -1,186 +1,66 @@
 <section id="recipes">
   <div>
-    <div class="recipe-rows">
+    <div ng-if="ctrl.snapshotAll.length > 0" class="recipe-rows">
       <h2>All Recipes</h2>
       <div class="recipe-section">
-        <div class="recipe-card">
-          <a class="recipe-link" href="/recipe"><img class="recipe-img" src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&s=0fa9d8a83ef3345d0ef1f36446c90734&auto=format&fit=crop&w=1295&q=80"></a>
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1505253213348-ce3e0ff1f0cc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1630c0586fec21844a14927e29f9d92e&auto=format&fit=crop&w=934&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1501959915551-4e8d30928317?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=afc5d8f90598eafe4667e19d3d3db791&auto=format&fit=crop&w=934&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1483918793747-5adbf82956c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f6620ad50aed16b01a10288f4bad3464&auto=format&fit=crop&w=934&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3966720985d969092f20b0f5c097aeb5&auto=format&fit=crop&w=1350&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1510629954389-c1e0da47d414?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c90a840fdcf7735cafcbba17ba10ac92&auto=format&fit=crop&w=668&q=80">
-          <h3>Veggies</h3>
+        <div ng-repeat="recipe in ctrl.snapshotAll" class="recipe-card">
+          <a class="recipe-link" href="/recipe/{{recipe.id}}"><img class="recipe-img" src="{{recipe.image1}}"></a>
+          <h3>{{recipe.title}}</h3>
         </div>
       </div>
       <a href="/recipetype"><h4>View all recipes ></h4></a>
     </div>
 
-    <div class="recipe-rows">
+    <div ng-if="ctrl.snapshotEntree.length > 0" class="recipe-rows">
       <h2>Entrees</h2>
       <div class="recipe-section">
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1508900138639-8d3ff3f49d78?ixlib=rb-0.3.5&s=7ed5ff02f53ab2b3c03ef0fd20b1cafb&auto=format&fit=crop&w=967&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=052d0d3015f525635deba810a58da4f1&auto=format&fit=crop&w=668&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-0.3.5&s=5d3bf41df53e7d131a5d6843f1828c61&auto=format&fit=crop&w=2550&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixlib=rb-0.3.5&s=bf5b94b642532375b945fec883f6e8e2&auto=format&fit=crop&w=668&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-0.3.5&s=e59c2a99256dc50cb8e713bacb0ede31&auto=format&fit=crop&w=800&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1503764654157-72d979d9af2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=71cdddf5cc615224cf2c26614d20154d&auto=format&fit=crop&w=1353&q=80">
-          <h3>Veggies</h3>
+        <div ng-repeat="recipe in ctrl.snapshotEntree" class="recipe-card">
+          <a class="recipe-link" href="/recipe/{{recipe.id}}"><img class="recipe-img" src="{{recipe.image1}}"></a>
+          <h3>{{recipe.title}}</h3>
         </div>
       </div>
       <a href="/recipetype"><h4>View all entrees ></h4></a>
     </div>
 
-    <div class="recipe-rows">
+    <div ng-if="ctrl.snapshotBreakfast.length > 0" class="recipe-rows">
       <h2>Breakfasts</h2>
       <div class="recipe-section">
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&s=0fa9d8a83ef3345d0ef1f36446c90734&auto=format&fit=crop&w=1295&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1505253213348-ce3e0ff1f0cc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1630c0586fec21844a14927e29f9d92e&auto=format&fit=crop&w=934&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1501959915551-4e8d30928317?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=afc5d8f90598eafe4667e19d3d3db791&auto=format&fit=crop&w=934&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1483918793747-5adbf82956c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f6620ad50aed16b01a10288f4bad3464&auto=format&fit=crop&w=934&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3966720985d969092f20b0f5c097aeb5&auto=format&fit=crop&w=1350&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1510629954389-c1e0da47d414?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c90a840fdcf7735cafcbba17ba10ac92&auto=format&fit=crop&w=668&q=80">
-          <h3>Veggies</h3>
+        <div ng-repeat="recipe in ctrl.snapshotBreakfast" class="recipe-card">
+          <a class="recipe-link" href="/recipe/{{recipe.id}}"><img class="recipe-img" src="{{recipe.image1}}"></a>
+          <h3>{{recipe.title}}</h3>
         </div>
       </div>
       <a href="/recipetype"><h4>View all breakfasts ></h4></a>
     </div>
 
-    <div class="recipe-rows">
+    <div ng-if="ctrl.snapshotDessert.length > 0" class="recipe-rows">
       <h2>Desserts</h2>
       <div class="recipe-section">
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1506459225024-1428097a7e18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3ab4e25a36018838f63e828e5a4d5570&auto=format&fit=crop&w=668&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1469533667357-006056eaf780?ixlib=rb-0.3.5&s=37b9a3259037f2cd807d6d07f72ac928&auto=format&fit=crop&w=1350&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1511911063855-2bf39afa5b2e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c56c38adec64e43406709056cd406077&auto=format&fit=crop&w=2468&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1504674138570-5fe6671ec5ed?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fed37dac43df50c2c00ffc40982df438&auto=format&fit=crop&w=1350&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1475856033578-76b4a228f5c5?ixlib=rb-0.3.5&s=b2a08c80a9828fda4a8274c47b8843ee&auto=format&fit=crop&w=2600&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1501014882647-fa3cef30d47d?ixlib=rb-0.3.5&s=619fa051abe1e1e40dfb66c51c4b484e&auto=format&fit=crop&w=800&q=80">
-          <h3>Veggies</h3>
+        <div ng-repeat="recipe in ctrl.snapshotDessert" class="recipe-card">
+          <a class="recipe-link" href="/recipe/{{recipe.id}}"><img class="recipe-img" src="{{recipe.image1}}"></a>
+          <h3>{{recipe.title}}</h3>
         </div>
       </div>
       <a href="/recipetype"><h4>View all desserts ></h4></a>
     </div>
 
-    <div class="recipe-rows">
+    <div ng-if="ctrl.snapshotSide.length > 0" class="recipe-rows">
       <h2>Sides/Snacks</h2>
       <div class="recipe-section">
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1470338950318-40320a722782?ixlib=rb-0.3.5&s=7661865a48cb45e147866528c6b4e84f&auto=format&fit=crop&w=1349&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1456006231177-735d43fb45ac?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6369245c07dac91dd0e70abc8343171d&auto=format&fit=crop&w=970&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1497533922876-a261efd98c5a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=119c87c19777a2b2eae0210c1f593a47&auto=format&fit=crop&w=926&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1502472231352-10142bacaba2?ixlib=rb-0.3.5&s=640d83015d68d047b4ef302fcac4fbda&auto=format&fit=crop&w=1490&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8f0dc7cd3103e3049d4429dee7c4580e&auto=format&fit=crop&w=1350&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1514537193821-ed4955693802?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c8801f9b65079be163b7d332b4929140&auto=format&fit=crop&w=1350&q=80">
-          <h3>Veggies</h3>
+        <div ng-repeat="recipe in ctrl.snapshotSide" class="recipe-card">
+          <a class="recipe-link" href="/recipe/{{recipe.id}}"><img class="recipe-img" src="{{recipe.image1}}"></a>
+          <h3>{{recipe.title}}</h3>
         </div>
       </div>
       <a href="/recipetype"><h4>View all sides/snacks ></h4></a>
     </div>
 
-    <div class="recipe-rows">
+    <div ng-if="ctrl.snapshotDrink.length > 0" class="recipe-rows">
       <h2>Drinks</h2>
       <div class="recipe-section">
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1448832328263-620a1a483228?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ef6f870956e7a5dbc82fb014b0adfc96&auto=format&fit=crop&w=668&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1486947799489-3fabdd7d32a6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9cbb531631c97478f94c71d68200b654&auto=format&fit=crop&w=750&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1481391564276-da6fcacaee31?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc1922b60159399bb33162b33daabdde&auto=format&fit=crop&w=668&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1496560963059-71f771ddb41f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6159a9b1402d52e037f25eeea48f7e9c&auto=format&fit=crop&w=668&q=80">
-          <h3>Veggies</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1501199532894-9449c0a85a77?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1aa3569a8f7402dfa00a7508d1c9d3af&auto=format&fit=crop&w=668&q=80">
-          <h3>Vegetables</h3>
-        </div>
-        <div class="recipe-card desktop">
-          <img class="recipe-img" src="https://images.unsplash.com/photo-1502304893662-8a23b8a721ba?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b8b7faa8b7679f70dce3c6fcf1a1acc2&auto=format&fit=crop&w=668&q=80">
-          <h3>Veggies</h3>
+        <div ng-repeat="recipe in ctrl.snapshotDrink" class="recipe-card">
+          <a class="recipe-link" href="/recipe/{{recipe.id}}"><img class="recipe-img" src="{{recipe.image1}}"></a>
+          <h3>{{recipe.title}}</h3>
         </div>
       </div>
       <a href="/recipetype"><h4>View all drinks ></h4></a>

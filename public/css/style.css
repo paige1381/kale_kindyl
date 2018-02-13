@@ -521,6 +521,12 @@ button {
     justify-content: space-between;
   }
 
+  .recipe-card h3 {
+    height: 88px;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
   #bio {
     align-items: flex-start;
     width: 260px;
@@ -656,7 +662,6 @@ button {
   }
 
   #recipes h2, #recipe h2, .recipe-title-1 {
-    /*width: 100%;*/
     margin: 0 0 20px 0;
   }
 
@@ -672,10 +677,6 @@ button {
   .recipe-card {
     width: 172.5px;
     margin: 0 10px 0 0;
-  }
-
-  .recipe-card h3 {
-    font-size: 18px;
   }
 
   .recipe-img-3 {

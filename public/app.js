@@ -37,8 +37,98 @@ app.controller('AboutController', function() {
 
 })
 
-app.controller('RecipesController', function() {
+app.controller('RecipesController', function($http) {
 
+  this.url = 'http://localhost:3000/recipes/';
+
+  this.getSnapShotAll = () => {
+    $http({
+      method: 'GET',
+      url: this.url + 'homeSnapshot'
+    }).then(response => {
+      this.snapshotAll = response.data;
+      console.log(this.snapshotAll);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getSnapShotAll();
+
+
+  this.getSnapShotEntree = () => {
+    $http({
+      method: 'GET',
+      url: this.url + 'entreeSnapshot'
+    }).then(response => {
+      this.snapshotEntree = response.data;
+      console.log(this.snapshotEntree);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getSnapShotEntree();
+
+
+  this.getSnapShotBreakfast = () => {
+    $http({
+      method: 'GET',
+      url: this.url + 'breakfastSnapshot'
+    }).then(response => {
+      this.snapshotBreakfast = response.data;
+      console.log(this.snapshotBreakfast);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getSnapShotBreakfast();
+
+
+  this.getSnapShotDessert = () => {
+    $http({
+      method: 'GET',
+      url: this.url + 'dessertSnapshot'
+    }).then(response => {
+      this.snapshotDessert = response.data;
+      console.log(this.snapshotDessert);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getSnapShotDessert();
+
+
+  this.getSnapShotSide = () => {
+    $http({
+      method: 'GET',
+      url: this.url + 'sideSnapshot'
+    }).then(response => {
+      this.snapshotSide = response.data;
+      console.log(this.snapshotSide);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getSnapShotSide();
+
+
+  this.getSnapShotDrink = () => {
+    $http({
+      method: 'GET',
+      url: this.url + 'drinkSnapshot'
+    }).then(response => {
+      this.snapshotDrink = response.data;
+      console.log(this.snapshotDrink);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getSnapShotDrink();
 })
 
 app.controller('RecipeTypeController', function() {
