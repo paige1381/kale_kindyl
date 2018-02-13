@@ -1,16 +1,19 @@
 <section id="home">
   <div class="home-row">
     <div class="home-col big-col">
-      <a class="recipe-link" href="/recipe"><img class="home-img" id="img-1" src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&s=0fa9d8a83ef3345d0ef1f36446c90734&auto=format&fit=crop&w=1295&q=80"></a>
-      <img class="home-img" id="img-4" src="https://images.unsplash.com/photo-1505253213348-ce3e0ff1f0cc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1630c0586fec21844a14927e29f9d92e&auto=format&fit=crop&w=934&q=80">
+      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2" class="recipe-link" href="/recipe">
+        <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
+      </a>
     </div>
     <div class="home-col sm-col">
-      <img class="home-img" id="img-2" src="https://images.unsplash.com/photo-1501959915551-4e8d30928317?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=afc5d8f90598eafe4667e19d3d3db791&auto=format&fit=crop&w=934&q=80">
-      <img class="home-img" id="img-3" src="https://images.unsplash.com/photo-1483918793747-5adbf82956c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f6620ad50aed16b01a10288f4bad3464&auto=format&fit=crop&w=934&q=80">
+      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:2" class="recipe-link" href="/recipe">
+        <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
+      </a>
     </div>
     <div class="home-col sm-col desktop">
-      <img class="home-img" id="img-3" src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3966720985d969092f20b0f5c097aeb5&auto=format&fit=crop&w=1350&q=80">
-      <img class="home-img" id="img-2" src="https://images.unsplash.com/photo-1510629954389-c1e0da47d414?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c90a840fdcf7735cafcbba17ba10ac92&auto=format&fit=crop&w=668&q=80">
+      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:4" class="recipe-link" href="/recipe">
+        <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
+      </a>
     </div>
     <div class="bio-col desktop">
       <img id="bio-img" src="./css/images/about.jpg">

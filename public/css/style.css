@@ -420,6 +420,11 @@ select {
   background-color: white;
 }
 
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
 button {
   background-color: black;
   color: white;
@@ -429,6 +434,7 @@ button {
   letter-spacing: 2px;
   font-size: 18px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .desktop {
@@ -543,6 +549,16 @@ button {
   .textarea-1 {
     width: 285px;
   }
+
+  .form-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 48.5%;
+  }
+
 }
 
 /*Desktop*/

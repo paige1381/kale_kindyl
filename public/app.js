@@ -4,9 +4,30 @@ app.controller('MainController', ['$http', function($http) {
   this.menu = false;
 }])
 
-app.controller('HomeController', function() {
+app.controller('HomeController', ['$http', function($http) {
 
-})
+  this.url = 'http://localhost:3000/recipes/'
+
+  this.imageIds = ['img-1', 'img-4', 'img-2', 'img-3', 'img-3', 'img-2'];
+
+  this.getSnapshotRecipes = () => {
+    $http({
+      method: 'GET',
+      url: this.url + 'homeSnapshot'
+    }).then(response => {
+      this.snapshotRecipes = response.data;
+      for (let i = 0; i < this.snapshotRecipes.length; i++) {
+        this.snapshotRecipes[i].imageId = this.imageIds[i]
+      }
+      console.log(this.snapshotRecipes);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getSnapshotRecipes();
+
+}])
 
 app.controller('CreateController', function() {
 
