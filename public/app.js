@@ -4,6 +4,7 @@ app.controller('MainController', ['$http', function($http) {
   this.menu = false;
 }])
 
+
 app.controller('HomeController', ['$http', function($http) {
 
   this.url = 'http://localhost:3000/recipes/';
@@ -29,13 +30,16 @@ app.controller('HomeController', ['$http', function($http) {
 
 }])
 
+
 app.controller('CreateController', function() {
 
 })
 
+
 app.controller('AboutController', function() {
 
 })
+
 
 app.controller('RecipesController', function($http) {
 
@@ -131,9 +135,56 @@ app.controller('RecipesController', function($http) {
   this.getSnapShotDrink();
 })
 
-app.controller('RecipeTypeController', function() {
 
+app.controller('RecipeTypeController', function($http, $routeParams) {
+
+  this.url = 'http://localhost:3000/recipes/';
+
+  if ($routeParams.id === "all") {
+    this.recipeTypeId = "";
+    // this.recipeTypeTitle = "All Recipes";
+  }
+  else {
+    this.recipeTypeId = $routeParams.id;
+  }
+
+  switch($routeParams.id) {
+    case "all":
+      this.recipeTypeTitle = "All Recipes"
+      break;
+    case "entree":
+      this.recipeTypeTitle = "Entrees"
+      break;
+    case "breakfast":
+      this.recipeTypeTitle = "Breakfasts"
+      break;
+    case "dessert":
+      this.recipeTypeTitle = "Desserts"
+      break;
+    case "side":
+      this.recipeTypeTitle = "Sides/Snacks"
+      break;
+    case "drink":
+      this.recipeTypeTitle = "Drinks"
+      break;
+  }
+
+  this.getRecipeType = () => {
+    $http({
+      method: 'GET',
+      url: this.url + this.recipeTypeId
+    }).then(response => {
+      this.recipeType = response.data;
+      console.log(this.recipeType);
+      console.log(this.recipeTypeTitle);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getRecipeType();
 })
+
 
 app.controller('RecipeController', function($http, $routeParams) {
 
@@ -184,7 +235,7 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
     controllerAs: 'ctrl'
   });
 
-  $routeProvider.when('/recipetype', {
+  $routeProvider.when('/recipetype/:id', {
     templateUrl: 'recipetype.html',
     controller: 'RecipeTypeController',
     controllerAs: 'ctrl'
