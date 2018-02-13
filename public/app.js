@@ -6,7 +6,7 @@ app.controller('MainController', ['$http', function($http) {
 
 app.controller('HomeController', ['$http', function($http) {
 
-  this.url = 'http://localhost:3000/recipes/'
+  this.url = 'http://localhost:3000/recipes/';
 
   this.imageIds = ['img-1', 'img-4', 'img-2', 'img-3', 'img-3', 'img-2'];
 
@@ -45,8 +45,25 @@ app.controller('RecipeTypeController', function() {
 
 })
 
-app.controller('RecipeController', function() {
+app.controller('RecipeController', function($http, $routeParams) {
 
+  this.url = 'http://localhost:3000/recipes/';
+
+  this.recipeId = $routeParams.id;
+
+  this.getRecipe = () => {
+    $http({
+      method: 'GET',
+      url: this.url + this.recipeId
+    }).then(response => {
+      this.recipe = response.data;
+      console.log(this.recipe);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getRecipe();
 })
 
 
@@ -83,7 +100,7 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
     controllerAs: 'ctrl'
   });
 
-  $routeProvider.when('/recipe', {
+  $routeProvider.when('/recipe/:id', {
     templateUrl: 'recipe.html',
     controller: 'RecipeController',
     controllerAs: 'ctrl'
