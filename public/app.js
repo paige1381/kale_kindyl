@@ -31,8 +31,25 @@ app.controller('HomeController', ['$http', function($http) {
 }])
 
 
-app.controller('CreateController', function() {
+app.controller('CreateController', function($http) {
 
+  this.url = 'http://localhost:3000/recipes/';
+  this.formData = {};
+
+  this.processCreateForm = () => {
+    console.log(this.formData);
+    $http({
+      method: 'POST',
+      url: this.url,
+      data: this.formData
+    }).then(response => {
+      console.log(response.data);
+
+      this.formData = {};
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
 })
 
 
@@ -142,7 +159,6 @@ app.controller('RecipeTypeController', function($http, $routeParams) {
 
   if ($routeParams.id === "all") {
     this.recipeTypeId = "";
-    // this.recipeTypeTitle = "All Recipes";
   }
   else {
     this.recipeTypeId = $routeParams.id;

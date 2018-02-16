@@ -1,36 +1,46 @@
-<section id="recipe">
+<form id="recipe" ng-submit="ctrl.processCreateForm()">
 
   <div class="recipe-rows">
-    <input class="recipe-title-1" type="text" placeholder="Recipe title">
+    <input class="recipe-title-1" type="text" required ng-model="ctrl.formData.title" placeholder="Recipe title">
+    <div id="recipe-type">
+      <h4>Recipe type:</h4>
+      <select ng-model="ctrl.formData.recipeType" title="Select type" ng-required="true">
+        <option selected value="entree">Entree</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="dessert">Dessert</option>
+        <option value="side">Side/Snack</option>
+        <option value="drink">Drink</option>
+      </select>
+    </div>
     <div class="recipe-section-1 create-row">
       <div class="recipe-img-1">
         <div class="add-img">
           <p>Upload image:</p>
-          <input type="text" class="category-title" placeholder="Image URL">
+          <input type="text" class="category-title" placeholder="Image URL"  ng-model="ctrl.formData.image1">
         </div>
       </div>
-      <textarea class="textarea-1" required>Enter text here</textarea>
+      <textarea class="textarea-1" ng-model="ctrl.formData.desc1" required>Enter text here</textarea>
     </div>
     <div class="recipe-section-3">
       <div class="recipe-img-2">
         <div class="add-img">
           <p>Upload image:</p>
-          <input type="text" class="category-title" placeholder="Image URL">
+          <input ng-model="ctrl.formData.image2" type="text" class="category-title" placeholder="Image URL">
         </div>
       </div>
       <div class="recipe-img-3">
         <div class="add-img">
           <p>Upload image:</p>
-          <input type="text" class="category-title" placeholder="Image URL">
+          <input ng-model="ctrl.formData.image3" type="text" class="category-title" placeholder="Image URL">
         </div>
       </div>
     </div>
     <div class="recipe-section-2">
-      <textarea class="textarea-2">Enter text here</textarea>
+      <textarea ng-model="ctrl.formData.desc2" class="textarea-2">Enter text here</textarea>
     </div>
     <div class="recipe-section-4">
       <input class="recipe-title-2" type="text" placeholder="Recipe title">
-      <textarea class="textarea-3">Enter text here</textarea>
+      <textarea ng-model="ctrl.formData.desc3" class="textarea-3">Enter text here</textarea>
       <div id="recipe-tags">
         <input type="text" class="category-title" placeholder="Tag">
         <div class="add add-tag">
@@ -42,12 +52,12 @@
       <ul id="prep">
         <li>
           Prep time:
-          <select>
-            <option selected value="1">10 min</option>
-            <option value="20 min">20 min</option>
+          <select ng-model="ctrl.formData.prep">
+            <option selected value="none">None</option>
+            <option value="5 min">5 min</option>
+            <option value="15 min">15 min</option>
             <option value="30 min">30 min</option>
-            <option value="40 min">40 min</option>
-            <option value="50 min">50 min</option>
+            <option value="45 min">45 min</option>
             <option value="1 hr">1 hr</option>
             <option value="1.5 hr">1.5 hr</option>
             <option value="2 hr">2 hr</option>
@@ -61,12 +71,12 @@
         </li>
         <li>
           Cook time:
-          <select>
-            <option selected value="1">10 min</option>
-            <option value="20 min">20 min</option>
+          <select ng-model="ctrl.formData.cook">
+            <option selected value="none">None</option>
+            <option value="5 min">5 min</option>
+            <option value="15 min">15 min</option>
             <option value="30 min">30 min</option>
-            <option value="40 min">40 min</option>
-            <option value="50 min">50 min</option>
+            <option value="45 min">45 min</option>
             <option value="1 hr">1 hr</option>
             <option value="1.5 hr">1.5 hr</option>
             <option value="2 hr">2 hr</option>
@@ -80,7 +90,7 @@
         </li>
         <li>
           Serves:
-          <select>
+          <select ng-model="ctrl.formData.serves">
             <option selected value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -122,10 +132,6 @@
             <p>Add an ingredient</p>
           </div>
         </div>
-
-        <!-- <ul class="ingredient-list">
-          <li>sunt bona vobis</li>
-        </ul> -->
       </div>
       <div id="directions">
         <h3>Directions</h3>
@@ -148,13 +154,10 @@
             <p>Add a step</p>
           </div>
         </div>
-        <!-- <ol class="directions-list">
-          <li>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts</li>
-        </ol> -->
       </div>
     </div>
     <div class="form-buttons">
-      <button>
+      <button type="submit" value="Submit">
         Publish
       </button>
       <button>
@@ -172,4 +175,4 @@
     </div>
   </div>
 
-</section>
+</form>

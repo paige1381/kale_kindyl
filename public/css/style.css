@@ -180,9 +180,9 @@ header {
 }
 
 #bio p, #about p {
-  font-family: "Tex Gyre Adventor";
+  font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
-  letter-spacing: .5px;
+  letter-spacing: 1.5px;
   font-size: 20px;
 }
 
@@ -435,10 +435,31 @@ button {
   font-size: 18px;
   cursor: pointer;
   margin-bottom: 10px;
+  border: none;
+}
+
+button:hover {
+  opacity: .6;
 }
 
 .desktop {
   display: none;
+}
+
+#recipe-type {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+#recipe-type > h4, #recipe-type > select {
+  color: #757575;
+  margin: 0 10px 0 0;
+}
+
+#recipe-type > select {
+  border: 1px solid #757575;
 }
 
 /*Tablet*/
@@ -590,7 +611,7 @@ button {
   }
 
   nav {
-    width: 40%;
+    width: 30%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -600,8 +621,13 @@ button {
     font-size: 20px;
   }
 
+  #title-link {
+    width: 70%;
+    box-sizing: border-box;
+  }
+
   #title {
-    width: 60%;
+    width: 100%;
     font-size: 36px;
   }
 
@@ -734,7 +760,7 @@ button {
   }
 
   #about p {
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: .5px;
   }
 
