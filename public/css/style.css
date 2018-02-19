@@ -1,21 +1,14 @@
 @font-face {
-  font-family: "Tex Gyre Adventor";
-  src: url("./tex-gyre-adventor/texgyreadventor-regular.otf");
-}
-
-@font-face {
-  font-family: "Tex Gyre Adventor Italic";
-  src: url("./tex-gyre-adventor/texgyreadventor-italic.otf");
-}
-
-@font-face {
   font-family: "Tex Gyre Adventor Bold";
   src: url("./tex-gyre-adventor/texgyreadventor-bold.otf");
 }
 
 body {
   margin: 0;
-  font-family: "Tex Gyre Adventor Bold";
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 a {
@@ -25,6 +18,10 @@ a {
 
 a:hover {
   opacity: .6;
+}
+
+p, li {
+  line-height: 26px;
 }
 
 #menu {
@@ -71,6 +68,7 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 32px;
+  font-family: "Tex Gyre Adventor Bold";
 }
 
 .material-icons {
@@ -93,7 +91,7 @@ header {
   padding: 30px;
   box-sizing: border-box;
   flex-wrap: wrap;
-  font-size: 30px;
+  font-size: 28px;
 }
 
 #title {
@@ -101,6 +99,7 @@ header {
   text-transform: uppercase;
   letter-spacing: 5px;
   width: 100%;
+  font-family: "Tex Gyre Adventor Bold";
 }
 
 #home, #about, #recipes, #contact, #credit, #recipe {
@@ -176,19 +175,17 @@ header {
   text-transform: uppercase;
   font-size: 24px;
   margin: 0;
-  letter-spacing: 2px;
+  letter-spacing: 3.5px;
+  font-family: "Tex Gyre Adventor Bold";
 }
 
-#bio p, #about p {
-  font-family: 'Roboto Condensed', sans-serif;
+#bio p, #about p, #bio a {
   margin: 0;
-  letter-spacing: 1.5px;
-  font-size: 20px;
 }
 
 #bio a {
-  letter-spacing: .5px;
-  align-self: flex-start;
+  font-weight: 500;
+  margin-top: 5px;
   font-size: 20px;
 }
 
@@ -209,6 +206,8 @@ header {
   text-align: left;
   border-bottom: 1px solid black;
   font-size: 32px;
+  margin: 30px 0;
+  font-family: "Tex Gyre Adventor Bold";
 }
 
 .recipe-rows {
@@ -223,23 +222,19 @@ header {
 }
 
 .recipe-card h3 {
-  text-transform: uppercase;
   text-align: center;
-  letter-spacing: 1.5px;
   font-size: 26px;
   margin: 0 0 50px 0;
-  font-family: "Tex Gyre Adventor";
+  font-weight: 300;
 }
 
 .recipe-rows h4 {
   margin: 0 0 50px 0;
   font-size: 20px;
-  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 .recipe-rows p, .recipe-section-4 li, .category-title {
-  font-family: "Tex Gyre Adventor";
-  letter-spacing: .5px;
   margin: 0 0 10px 0;
 }
 
@@ -289,17 +284,20 @@ input {
   margin: 30px 0;
 }
 
+#recipe-tags {
+  margin: 30px 0;
+}
+
 #recipe-tags span {
   display: inline-block;
   background-color: rgba(0, 0, 0, .85);
   color: white;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 14px;
   padding: 5px 10px;
   margin: 2px;
   box-sizing: border-box;
   letter-spacing: 1.75px;
-  font-family: "Tex Gyre Adventor";
 }
 
 #prep li {
@@ -333,9 +331,7 @@ input {
 
 #about {
   color: black;
-  letter-spacing: 1.5px;
   align-items: center;
-  font-family: "Tex Gyre Adventor";
   margin-bottom: 10px;
   width: 80%;
 }
@@ -388,17 +384,16 @@ input {
   opacity: .8;
   margin-top: 0;
   margin-bottom: 50px;
+  font-family: 'Roboto', sans-serif;
 }
 
 #credit > h6 {
   margin: 0;
+  font-weight: 500;
 }
 
 .textarea-1, .textarea-2, .textarea-3  {
   width: 100%;
-  font-family: "Tex Gyre Adventor";
-  letter-spacing: .5px;
-  font-size: 14px;
   margin-bottom: 10px;
   height: 350px;
   padding: 10px;
@@ -412,8 +407,6 @@ input {
 }
 
 select {
-  font-family: "Tex Gyre Adventor";
-  letter-spacing: .5px;
   font-size: 14px;
   margin-bottom: 5px;
   border: 1px solid black;
