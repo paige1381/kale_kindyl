@@ -538,7 +538,7 @@ button:hover {
   .recipe-card h3 {
     height: 88px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 22px;
   }
 
   #bio {
@@ -611,7 +611,8 @@ button:hover {
     align-items: center;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 20px;
+    font-size: 22px;
+    font-family: "Tex Gyre Adventor Bold";
   }
 
   #title-link {
@@ -621,7 +622,7 @@ button:hover {
 
   #title {
     width: 100%;
-    font-size: 36px;
+    font-size: 40px;
   }
 
   #home, #about, #contact, #credit, #recipes, #recipe {
@@ -724,13 +725,13 @@ button:hover {
   }
 
   #bio p {
-    letter-spacing: .5px;
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   #bio a {
     letter-spacing: .5px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   #about {
@@ -749,7 +750,6 @@ button:hover {
 
   #about h4 {
     font-size: 20px;
-    letter-spacing: 2px;
   }
 
   #about p {
@@ -767,6 +767,7 @@ button:hover {
     align-items: center;
     margin-bottom: 5px;
     margin-top: 40px;
+    font-family: "Tex Gyre Adventor Bold";
   }
 
   #contact > h3 {
