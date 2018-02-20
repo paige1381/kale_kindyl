@@ -23,7 +23,6 @@
         </nav>
       </div>
     </header>
-
     <div ng-controller="MainController as ctrl">
       <div id="menu">
         <i class="material-icons" ng-click="ctrl.menu = !ctrl.menu">menu</i>
@@ -36,9 +35,10 @@
     </div>
 
     <main>
-
       <div ng-view></div>
+    </main>
 
+    <footer>
       <section id="contact">
         <h3 class="desktop">Follow me!</h3>
         <div id="icons">
@@ -52,6 +52,6 @@
         <h6>Website created by <a href="http://paigeboyer.com/" target="_blank">Paige Boyer</a></h6>
         <h6>Photos sourced from <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></h6>
       </div>
-    </main>
+    </footer>
   </body>
 </html>

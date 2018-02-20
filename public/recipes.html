@@ -1,11 +1,11 @@
 <section id="recipes">
   <div>
-    <div ng-if="ctrl.snapshotAll.length > 0" class="recipe-rows">
+    <div ng-if="ctrl.snapshotAll.length > 0" class="recipe-rows card">
       <h2>All Recipes</h2>
       <div class="recipe-section">
         <div ng-repeat="recipe in ctrl.snapshotAll" class="recipe-card">
           <a class="recipe-link" href="/recipe/{{recipe.id}}">
-            <img class="recipe-img" src="{{recipe.image1}}">
+            <img class="recipe-img card-img" src="{{recipe.image1}}">
             <h3>{{recipe.title}}</h3>
           </a>
         </div>
@@ -13,12 +13,12 @@
       <a href="/recipetype/all"><h4>View all recipes ></h4></a>
     </div>
 
-    <div ng-if="ctrl.snapshotEntree.length > 0" class="recipe-rows">
+    <div ng-if="ctrl.snapshotEntree.length > 0" class="recipe-rows card">
       <h2>Entrees</h2>
       <div class="recipe-section">
         <div ng-repeat="recipe in ctrl.snapshotEntree" class="recipe-card">
           <a class="recipe-link" href="/recipe/{{recipe.id}}">
-            <img class="recipe-img" src="{{recipe.image1}}">
+            <img class="recipe-img card-img" src="{{recipe.image1}}">
             <h3>{{recipe.title}}</h3>
           </a>
         </div>
@@ -26,12 +26,12 @@
       <a href="/recipetype/entree"><h4>View all entrees ></h4></a>
     </div>
 
-    <div ng-if="ctrl.snapshotBreakfast.length > 0" class="recipe-rows">
+    <div ng-if="ctrl.snapshotBreakfast.length > 0" class="recipe-rows card">
       <h2>Breakfasts</h2>
       <div class="recipe-section">
         <div ng-repeat="recipe in ctrl.snapshotBreakfast" class="recipe-card">
           <a class="recipe-link" href="/recipe/{{recipe.id}}">
-            <img class="recipe-img" src="{{recipe.image1}}">
+            <img class="recipe-img card-img" src="{{recipe.image1}}">
             <h3>{{recipe.title}}</h3>
           </a>
         </div>
@@ -39,12 +39,12 @@
       <a href="/recipetype/breakfast"><h4>View all breakfasts ></h4></a>
     </div>
 
-    <div ng-if="ctrl.snapshotDessert.length > 0" class="recipe-rows">
+    <div ng-if="ctrl.snapshotDessert.length > 0" class="recipe-rows card">
       <h2>Desserts</h2>
       <div class="recipe-section">
         <div ng-repeat="recipe in ctrl.snapshotDessert" class="recipe-card">
           <a class="recipe-link" href="/recipe/{{recipe.id}}">
-            <img class="recipe-img" src="{{recipe.image1}}">
+            <img class="recipe-img card-img" src="{{recipe.image1}}">
             <h3>{{recipe.title}}</h3>
           </a>
         </div>
@@ -52,12 +52,12 @@
       <a href="/recipetype/dessert"><h4>View all desserts ></h4></a>
     </div>
 
-    <div ng-if="ctrl.snapshotSide.length > 0" class="recipe-rows">
+    <div ng-if="ctrl.snapshotSide.length > 0" class="recipe-rows card">
       <h2>Sides/Snacks</h2>
       <div class="recipe-section">
         <div ng-repeat="recipe in ctrl.snapshotSide" class="recipe-card">
           <a class="recipe-link" href="/recipe/{{recipe.id}}">
-            <img class="recipe-img" src="{{recipe.image1}}">
+            <img class="recipe-img card-img" src="{{recipe.image1}}">
             <h3>{{recipe.title}}</h3>
           </a>
         </div>
@@ -65,12 +65,12 @@
       <a href="/recipetype/side"><h4>View all sides/snacks ></h4></a>
     </div>
 
-    <div ng-if="ctrl.snapshotDrink.length > 0" class="recipe-rows">
+    <div ng-if="ctrl.snapshotDrink.length > 0" class="recipe-rows card">
       <h2>Drinks</h2>
       <div class="recipe-section">
         <div ng-repeat="recipe in ctrl.snapshotDrink" class="recipe-card">
           <a class="recipe-link" href="/recipe/{{recipe.id}}">
-            <img class="recipe-img" src="{{recipe.image1}}">
+            <img class="recipe-img card-img" src="{{recipe.image1}}">
             <h3>{{recipe.title}}</h3>
           </a>
         </div>
