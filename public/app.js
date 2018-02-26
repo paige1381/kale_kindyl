@@ -44,7 +44,6 @@ app.controller('CreateController', function($http) {
       data: this.formData
     }).then(response => {
       console.log(response.data);
-
       this.formData = {};
     }).catch(error => {
       console.log('error:', error);
@@ -221,6 +220,21 @@ app.controller('RecipeController', function($http, $routeParams) {
   }
 
   this.getRecipe();
+
+  this.getTags = () => {
+    $http({
+      method: 'GET',
+      url: this.url + this.recipeId + '/tags'
+    }).then(response => {
+      this.tags = response.data;
+      console.log(this.recipe);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getTags();
+
 })
 
 
