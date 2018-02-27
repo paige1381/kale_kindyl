@@ -7,7 +7,7 @@ app.controller('MainController', ['$http', function($http) {
 
 app.controller('HomeController', ['$http', function($http) {
 
-  this.url = 'http://localhost:3000/recipes/';
+  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
 
   this.imageIds = ['img-1', 'img-4', 'img-2', 'img-3', 'img-3', 'img-2'];
 
@@ -33,7 +33,7 @@ app.controller('HomeController', ['$http', function($http) {
 
 app.controller('CreateController', function($http) {
 
-  this.url = 'http://localhost:3000/recipes/';
+  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
   this.formData = {};
 
   this.processCreateForm = () => {
@@ -59,7 +59,7 @@ app.controller('AboutController', function() {
 
 app.controller('RecipesController', function($http) {
 
-  this.url = 'http://localhost:3000/recipes/';
+  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
 
   this.getSnapShotAll = () => {
     $http({
@@ -154,7 +154,7 @@ app.controller('RecipesController', function($http) {
 
 app.controller('RecipeTypeController', function($http, $routeParams) {
 
-  this.url = 'http://localhost:3000/recipes/';
+  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
 
   if ($routeParams.id === "all") {
     this.recipeTypeId = "";
@@ -203,7 +203,7 @@ app.controller('RecipeTypeController', function($http, $routeParams) {
 
 app.controller('RecipeController', function($http, $routeParams) {
 
-  this.url = 'http://localhost:3000/recipes/';
+  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
 
   this.recipeId = $routeParams.id;
 
