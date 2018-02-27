@@ -1,6 +1,6 @@
 <section id="recipes">
   <div>
-    <div  class="recipe-rows card">
+    <div ng-if="ctrl.snapshotAll.length > 0" class="recipe-rows card">
       <h2>All Recipes</h2>
       <div class="recipe-section">
         <div ng-repeat="recipe in ctrl.snapshotAll" class="recipe-card">

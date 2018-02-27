@@ -1,17 +1,17 @@
 <section id="home">
   <div class="home-row">
     <div class="home-col big-col">
-      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2" class="recipe-link" href="/recipe/{{recipe.id}}">
+      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2" class="recipe-link" href="#!/recipe/{{recipe.id}}">
         <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
       </a>
     </div>
     <div class="home-col sm-col">
-      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:2" class="recipe-link" href="/recipe/{{recipe.id}}">
+      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:2" class="recipe-link" href="#!/recipe/{{recipe.id}}">
         <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
       </a>
     </div>
     <div class="home-col sm-col desktop">
-      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:4" class="recipe-link" href="/recipe/{{recipe.id}}">
+      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:4" class="recipe-link" href="#!/recipe/{{recipe.id}}">
         <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
       </a>
     </div>
@@ -20,7 +20,7 @@
       <div id="bio">
         <h4>Hi, I'm Kindyl</h4>
         <p>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts.</p>
-        <a href="/about">Read more ></a>
+        <a href="#!/about">Read more ></a>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
     <div id="bio">
       <h4>Hi, I'm Kindyl</h4>
       <p>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts.</p>
-      <a href="/about">Read more ></a>
+      <a href="#!/about">Read more ></a>
     </div>
   </div>
 </section>
