@@ -239,7 +239,7 @@ app.controller('RecipeController', function($http, $routeParams) {
 
 
 app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode({ enabled: true });
+  $locationProvider.html5Mode({ enabled: true }).hashPrefix('');
 
   $routeProvider.when('/home', {
     templateUrl: 'home.html',
