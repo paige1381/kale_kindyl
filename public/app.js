@@ -7,7 +7,7 @@ app.controller('MainController', ['$http', function($http) {
 
 app.controller('HomeController', ['$http', function($http) {
 
-  this.url = 'http://localhost:3000/recipes/';
+  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
 
   this.imageIds = ['img-1', 'img-4', 'img-2', 'img-3', 'img-3', 'img-2'];
 
