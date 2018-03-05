@@ -1,0 +1,134 @@
+@media (min-width: 600px) {
+  #header {
+    width: 580px;
+  }
+
+  .home-row {
+    flex-direction: row;
+    width: 580px;
+    justify-content: space-between;
+  }
+
+  .big-col {
+    width: 305px;
+    margin: 0;
+  }
+
+  .sm-col {
+    width: 265px;
+    margin: 0;
+  }
+
+  #img-1 {
+    height: 275px;
+  }
+
+  #img-2 {
+    height: 385px;
+  }
+
+  #img-3 {
+    height: 315px;
+  }
+
+  #img-4 {
+    height: 425px;
+  }
+
+  .recipe-rows, #about {
+    flex-direction: column;
+    width: 580px;
+  }
+
+  .recipe-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .recipe-card {
+    width: 260px;
+  }
+
+  .recipe-section-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .recipe-img-2, .recipe-img-3, .recipe-img-1 {
+    width: 285px;
+    box-sizing: border-box;
+    object-fit: cover;
+  }
+
+  .recipe-img-1 {
+    float: left;
+    margin-right: 15px;
+  }
+
+  .bio-col {
+    width: 580px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .recipe-card h3 {
+    height: 88px;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  #bio {
+    align-items: flex-start;
+    width: 260px;
+    flex-wrap: wrap;
+  }
+
+  #bio-img {
+    width: 260px;
+    height: 260px;
+    margin: 0;
+  }
+
+  #contact {
+    width: 580px;
+  }
+
+  #credit {
+    width: 580px;
+  }
+
+  .create-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .textarea-1 {
+    width: 285px;
+  }
+
+  .form-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 48.5%;
+  }
+
+  #about {
+    display: block;
+  }
+
+  #about-img {
+    float: left;
+    margin-right: 20px;
+  }
+
+}

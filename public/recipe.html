@@ -1,78 +1,63 @@
-<section id="recipe">
-
-  <div class="recipe-rows">
-    <h2>{{ctrl.recipe.title}}</h2>
-    <div class="recipe-section-1">
-      <img class="recipe-img-1" src="{{ctrl.recipe.image1}}">
-      <p>
-        {{ctrl.recipe.desc1}}
-      </p>
+<div class="main-section">
+  <h2>{{ctrl.recipe.title}}</h2>
+  <div>
+    <img class="recipe-img-portrait" src="{{ctrl.recipe.image1}}">
+    <p>
+      {{ctrl.recipe.desc1}}
+    </p>
+  </div>
+  <div>
+    <img class="recipe-img-portrait" src="{{ctrl.recipe.image2}}">
+    <img class="recipe-img-portrait" src="{{ctrl.recipe.image3}}">
+  </div>
+  <p>
+    {{ctrl.recipe.desc2}}
+  </p>
+  <div>
+    <h3>{{ctrl.recipe.title}}</h3>
+    <p id="recipe-blurb">{{ctrl.recipe.desc3}}</p>
+    <div id="recipe-tags">
+      <span>Veggies</span>
+      <span>Sprouts</span>
+      <span>Maize</span>
+      <span>Horseradish</span>
+      <span>Jícama</span>
     </div>
-    <div class="recipe-section-3">
-      <img class="recipe-img-2" src="{{ctrl.recipe.image2}}">
-      <img class="recipe-img-3" src="{{ctrl.recipe.image3}}">
-    </div>
-    <div class="recipe-section-2">
-      <p>
-        {{ctrl.recipe.desc2}}
-      </p>
-    </div>
-    <div class="recipe-section-4">
-      <h2>{{ctrl.recipe.title}}</h2>
-      <p id="recipe-blurb">{{ctrl.recipe.desc3}}</p>
-      <div id="recipe-tags">
-        <span>Veggies</span>
-        <span>Sprouts</span>
-        <span>Maize</span>
-        <span>Horseradish</span>
-        <span>Jícama</span>
-      </div>
-      <ul id="prep">
-        <li ng-if="ctrl.recipe.prep">Prep time: {{ctrl.recipe.prep}}</li>
-        <li ng-if="ctrl.recipe.cook">Cook time: {{ctrl.recipe.cook}}</li>
-        <li ng-if="ctrl.recipe.serves">Serves: {{ctrl.recipe.serves}}</li>
+    <ul id="prep">
+      <li ng-if="ctrl.recipe.prep">Prep time: {{ctrl.recipe.prep}}</li>
+      <li ng-if="ctrl.recipe.cook">Cook time: {{ctrl.recipe.cook}}</li>
+      <li ng-if="ctrl.recipe.serves">Serves: {{ctrl.recipe.serves}}</li>
+    </ul>
+    <div id="ingredients">
+      <h3>Ingredients</h3>
+      <ul class="ingredient-list">
+        <li>Veggies</li>
+        <li>sunt bona vobis</li>
+        <li>proinde vos postulo</li>
+        <li>grape</li>
+        <li>pea sprouts</li>
+        <li>horseradish</li>
+        <li>courgette</li>
+        <li>maize</li>
+        <li>spinach</li>
+        <li>prairie turnip</li>
+        <li>jícama</li>
+        <li>coriander</li>
       </ul>
-      <div id="ingredients">
-        <h3>Ingredients</h3>
-        <ul class="ingredient-list">
-          <li>Veggies</li>
-          <li>sunt bona vobis</li>
-          <li>proinde vos postulo</li>
-          <li>grape</li>
-          <li>pea sprouts</li>
-          <li>horseradish</li>
-          <li>courgette</li>
-          <li>maize</li>
-          <li>spinach</li>
-          <li>prairie turnip</li>
-          <li>jícama</li>
-          <li>coriander</li>
-        </ul>
-      </div>
-      <div id="directions">
-        <h3>Directions</h3>
-        <ol class="directions-list">
-          <li>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts</li>
-          <li>Horseradish courgette maize spinach prairie turnip jícama coriander quandong</li>
-          <li>Gourd broccoli seakale gumbo. Parsley corn lentil zucchini radicchio maize burdock</li>
-          <li>Avocado sea lettuce</li>
-          <li>Garbanzo tigernut earthnut pea fennel</li>
-        </ol>
-      </div>
-      <img class="recipe-img-4" src="{{ctrl.recipe.image3}}">
     </div>
-  </div>
-
-  <div class="bio-col">
-    <img id="bio-img" src="./css/images/about.jpg">
-    <div id="bio">
-      <h4>Hi, I'm Kindyl</h4>
-      <p>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts.</p>
-      <a href="/about">Read more ></a>
+    <div id="directions">
+      <h3>Directions</h3>
+      <ol class="directions-list">
+        <li>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts</li>
+        <li>Horseradish courgette maize spinach prairie turnip jícama coriander quandong</li>
+        <li>Gourd broccoli seakale gumbo. Parsley corn lentil zucchini radicchio maize burdock</li>
+        <li>Avocado sea lettuce</li>
+        <li>Garbanzo tigernut earthnut pea fennel</li>
+      </ol>
     </div>
+    <img class="recipe-img-4" src="{{ctrl.recipe.image3}}">
   </div>
+</div>
 
-
-
-
-</section>
+<ng-include src="'../partials/bio.html'">
+</ng-include>

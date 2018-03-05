@@ -1,35 +1,33 @@
-<section id="home">
-  <div class="home-row">
-    <div class="home-col big-col">
-      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2" class="recipe-link" href="/recipe/{{recipe.id}}">
-        <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-      </a>
-    </div>
-    <div class="home-col sm-col">
-      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:2" class="recipe-link" href="/recipe/{{recipe.id}}">
-        <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-      </a>
-    </div>
-    <div class="home-col sm-col desktop">
-      <a ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:2:4" class="recipe-link" href="/recipe/{{recipe.id}}">
-        <img class="home-img" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-      </a>
-    </div>
-    <div class="bio-col desktop">
-      <img id="bio-img" src="./css/images/about.jpg">
-      <div id="bio">
-        <h4>Hi, I'm Kindyl</h4>
-        <p>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts.</p>
-        <a href="/about">Read more ></a>
+<div class="main-section">
+  <div ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:1:6">
+    <a href="/recipe/{{recipe.id}}"><h2>{{recipe.title}}</h2></a>
+    <a href="/recipe/{{recipe.id}}"><img class="recipe-img-portrait" src="{{recipe.image1}}"></a>
+    <p class="truncated-text">
+      {{recipe.desc1 | limitTo: 200}} ...
+      <a class="more-link" href="/recipe/{{recipe.id}}">Read more ></a>
+    </p>
+  </div>
+  <div>
+    <h3>Recent Recipes</h3>
+    <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:5:0" >
+      <img class="recipe-img-square" src="{{recipe.image1}}">
+      <div class="recent-recipe-text">
+        <h4>{{recipe.title}}</h4>
+        <div class="recent-recipe-tags">
+          <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+            {{tag.title}}
+            <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+          </span>
+        </div>
+        <!-- <p class="truncated-text">
+          {{recipe.desc1 | limitTo: 200}} ...
+          <span class="more-link">></span>
+        </p> -->
       </div>
-    </div>
+    </a>
   </div>
-  <div class="bio-col mobile tablet">
-    <img id="bio-img" src="./css/images/about.jpg">
-    <div id="bio">
-      <h4>Hi, I'm Kindyl</h4>
-      <p>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts.</p>
-      <a href="/about">Read more ></a>
-    </div>
-  </div>
-</section>
+  <a class="more-link" href="/recipes">View past recipes ></a>
+</div>
+
+<ng-include src="'../partials/bio.html'">
+</ng-include>

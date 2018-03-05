@@ -1,26 +1,17 @@
-<section id="recipes">
-  <div>
-    <div class="recipe-rows card">
-      <h2>{{ctrl.recipeTypeTitle}}</h2>
-      <div class="recipe-section">
-        <div ng-repeat="recipe in ctrl.recipeType" class="recipe-card">
-          <a class="recipe-link" href="/recipe/{{recipe.id}}">
-            <img class="recipe-img card-img" src="{{recipe.image1}}">
-            <h3>{{recipe.title}}</h3>
-          </a>
-        </div>
+<div class="main-section-bkg">
+  <h2>{{ctrl.recipeTypeTitle}}</h2>
+  <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.recipeType | limitTo:4:0" >
+    <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
+    <div>
+      <h4>{{recipe.title}}</h4>
+      <div class="recent-recipe-tags">
+        <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+          {{tag.title}}
+          <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+        </span>
       </div>
     </div>
-  </div>
-
-  <div class="bio-col">
-    <img id="bio-img" src="./css/images/about.jpg">
-    <div id="bio">
-      <h4>Hi, I'm Kindyl</h4>
-      <p>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts.</p>
-      <a href="/about">Read more ></a>
-    </div>
-  </div>
-
-
-</section>
+  </a>
+</div>
+<ng-include src="'../partials/bio.html'">
+</ng-include>
