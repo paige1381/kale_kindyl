@@ -1,8 +1,9 @@
-  <div class="main-section-bkg">
-    <div class="recipe-type-section" ng-if="ctrl.snapshotAll.length > 0">
-      <h2>All Recipes</h2>
+<div class="main-section">
+  <div class="recipe-type-section" ng-if="ctrl.snapshotAll.length > 0">
+    <h2>All Recipes</h2>
+    <div class="recent-recipes">
       <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotAll | limitTo:4:0" >
-        <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
+        <img class="recipe-img-square"src="{{recipe.image1}}">
         <div>
           <h4>{{recipe.title}}</h4>
           <div class="recent-recipe-tags">
@@ -13,93 +14,105 @@
           </div>
         </div>
       </a>
-      <a class="more-link" href="/recipetype/all"><h4>View all recipes ></h4></a>
     </div>
-
-    <div class="recipe-type-section" ng-if="ctrl.snapshotEntree.length > 0">
-      <h2>Entrees</h2>
-      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotEntree | limitTo:4:0" >
-        <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-        <div>
-          <h4>{{recipe.title}}</h4>
-          <div class="recent-recipe-tags">
-            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
-              {{tag.title}}
-              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="more-link" href="/recipetype/entree"><h4>View all entrees ></h4></a>
-    </div>
-
-    <div class="recipe-type-section" ng-if="ctrl.snapshotBreakfast.length > 0">
-      <h2>Breakfasts</h2>
-      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotBreakfast | limitTo:4:0" >
-        <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-        <div>
-          <h4>{{recipe.title}}</h4>
-          <div class="recent-recipe-tags">
-            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
-              {{tag.title}}
-              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="more-link" href="/recipetype/breakfast"><h4>View all breakfasts ></h4></a>
-    </div>
-
-    <div class="recipe-type-section" ng-if="ctrl.snapshotDessert.length > 0">
-      <h2>Desserts</h2>
-      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotDessert | limitTo:4:0" >
-        <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-        <div>
-          <h4>{{recipe.title}}</h4>
-          <div class="recent-recipe-tags">
-            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
-              {{tag.title}}
-              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="more-link" href="/recipetype/dessert"><h4>View all desserts ></h4></a>
-    </div>
-
-    <div class="recipe-type-section" ng-if="ctrl.snapshotSide.length > 0">
-      <h2>Sides/Snacks</h2>
-      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotSide | limitTo:4:0" >
-        <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-        <div>
-          <h4>{{recipe.title}}</h4>
-          <div class="recent-recipe-tags">
-            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
-              {{tag.title}}
-              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="more-link" href="/recipetype/side"><h4>View all sides/snacks ></h4></a>
-    </div>
-
-    <div class="recipe-type-section" ng-if="ctrl.snapshotDrink.length > 0">
-      <h2>Drinks</h2>
-      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotDrink | limitTo:4:0" >
-        <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-        <div>
-          <h4>{{recipe.title}}</h4>
-          <div class="recent-recipe-tags">
-            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
-              {{tag.title}}
-              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="more-link" href="/recipetype/drink"><h4>View all drinks ></h4></a>
-    </div>
+    <a class="more-link" href="/recipetype/all"><h4>View all recipes ></h4></a>
   </div>
-  <ng-include src="'../partials/bio.html'">
-  </ng-include>
+
+  <div class="recipe-type-section" ng-if="ctrl.snapshotEntree.length > 0">
+    <h2>Entrees</h2>
+    <div class="recent-recipes">
+      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotEntree | limitTo:4:0" >
+        <img class="recipe-img-square" src="{{recipe.image1}}">
+        <div>
+          <h4>{{recipe.title}}</h4>
+          <div class="recent-recipe-tags">
+            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+              {{tag.title}}
+              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <a class="more-link" href="/recipetype/entree"><h4>View all entrees ></h4></a>
+  </div>
+
+  <div class="recipe-type-section" ng-if="ctrl.snapshotBreakfast.length > 0">
+    <h2>Breakfasts</h2>
+    <div class="recent-recipes">
+      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotBreakfast | limitTo:4:0" >
+        <img class="recipe-img-square" src="{{recipe.image1}}">
+        <div>
+          <h4>{{recipe.title}}</h4>
+          <div class="recent-recipe-tags">
+            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+              {{tag.title}}
+              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <a class="more-link" href="/recipetype/breakfast"><h4>View all breakfasts ></h4></a>
+  </div>
+
+  <div class="recipe-type-section" ng-if="ctrl.snapshotDessert.length > 0">
+    <h2>Desserts</h2>
+    <div class="recent-recipes">
+      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotDessert | limitTo:4:0" >
+        <img class="recipe-img-square" src="{{recipe.image1}}">
+        <div>
+          <h4>{{recipe.title}}</h4>
+          <div class="recent-recipe-tags">
+            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+              {{tag.title}}
+              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <a class="more-link" href="/recipetype/dessert"><h4>View all desserts ></h4></a>
+  </div>
+
+  <div class="recipe-type-section" ng-if="ctrl.snapshotSide.length > 0">
+    <h2>Sides/Snacks</h2>
+    <div class="recent-recipes">
+      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotSide | limitTo:4:0" >
+        <img class="recipe-img-square" src="{{recipe.image1}}">
+        <div>
+          <h4>{{recipe.title}}</h4>
+          <div class="recent-recipe-tags">
+            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+              {{tag.title}}
+              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <a class="more-link" href="/recipetype/side"><h4>View all sides/snacks ></h4></a>
+  </div>
+
+  <div class="recipe-type-section" ng-if="ctrl.snapshotDrink.length > 0">
+    <h2>Drinks</h2>
+    <div class="recent-recipes">
+      <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotDrink | limitTo:4:0" >
+        <img class="recipe-img-square" src="{{recipe.image1}}">
+        <div>
+          <h4>{{recipe.title}}</h4>
+          <div class="recent-recipe-tags">
+            <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+              {{tag.title}}
+              <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <a class="more-link" href="/recipetype/drink"><h4>View all drinks ></h4></a>
+  </div>
+</div>
+
+<ng-include src="'../partials/bio.html'">
+</ng-include>

@@ -1,6 +1,10 @@
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .desktop {
     display: flex;
+  }
+
+  p, li {
+    line-height: 24px;
   }
 
   .mobile, .tablet {
@@ -12,10 +16,14 @@
   }
 
   #header {
-    width: 980px;
+    width: 1000px;
     height: 200px;
     flex-wrap: nowrap;
     align-items: center;
+  }
+
+  #contact, #credit {
+    width: 1000px;
   }
 
   nav {
@@ -40,136 +48,38 @@
     font-size: 40px;
   }
 
-  #home, #about, #contact, #credit, #recipes, #recipe {
-    width: 980px;
-  }
-
-  .home-row {
-    width: 100%;
-    margin: 0;
-  }
-
-  .home-img, .recipe-img {
-    opacity: .85;
-  }
-
-  .home-img:hover, .recipe-link:hover, .recipe-img:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-
-  .big-col {
-    width: 260px;
-    margin: 0;
-  }
-
-  .sm-col {
-    width: 220px;
-    margin: 0;
-  }
-
-  #img-1 {
-    height: 275px;
-  }
-
-  #img-2 {
-    height: 385px;
-  }
-
-  #img-3 {
-    height: 315px;
-  }
-
-  #img-4 {
-    height: 425px;
-  }
-
-  #recipes, #recipe {
-    display: flex;
+  main {
+    width: 1000px;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .recipe-rows {
-    width: 720px;
-    box-sizing: border-box;
-  }
-
-  .card {
-    padding: 40px 10px;
-  }
-
-  #recipe h2, .recipe-title-1 {
-    margin: 0 5px 20px 0;
-  }
-
-  .recipe-rows h4 {
-    width: auto;
-    box-sizing: border-box;
-    margin: 0 10px 50px 10px;
-  }
-
-  .recipe-rows > h2 {
-    margin: 0 10px 20px 10px;
-    box-sizing: border-box;
-    width: auto;
-  }
-
-  .recipe-rows p {
-    margin: 0 5px 10px 0;
-  }
-
-  .recipe-section {
-    justify-content: flex-start;
-    padding-left: 10px;
-  }
-
-  .recipe-card {
-    width: 162.5px;
-    margin: 0 10px 0 0;
-  }
-
-  .recipe-img-3 {
-    width: 420px;
+  .main-section {
+    width: 650px;
+    padding-right: 10px;
   }
 
   .bio-col {
-    width: 250px;
-    flex-direction: column;
     margin: 0;
-    justify-content: flex-start;
-    height: 100%;
-  }
-
-  .recipe-section-3, .recipe-section-4 {
-    margin-right: 5px;
-    width: auto;
+    box-sizing: border-box;
+    width: 350px;
   }
 
   #bio-img {
-    width: 175px;
-    height: 175px;
+    width: 115px;
+    height: 115px;
     margin-bottom: 20px;
   }
 
-  #bio {
-    width: 200px;
+  .recipe-img-portrait {
+    height: 800px;
   }
 
-  #bio > h4 {
-    letter-spacing: 2px;
-    font-size: 20px;
+  .recipe-img-square {
+    width: 150px;
+    height: 150px;
   }
 
-  #bio p {
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  #bio a {
-    letter-spacing: .5px;
-    font-size: 18px;
-  }
 
   #about {
     padding: 0 20px;
@@ -179,8 +89,8 @@
   }
 
   #about-img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin: 0 40px 0 0;
   }
 

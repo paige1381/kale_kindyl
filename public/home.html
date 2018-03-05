@@ -1,5 +1,5 @@
 <div class="main-section">
-  <div ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:1:6">
+  <div ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:1:0">
     <a href="/recipe/{{recipe.id}}"><h2>{{recipe.title}}</h2></a>
     <a href="/recipe/{{recipe.id}}"><img class="recipe-img-portrait" src="{{recipe.image1}}"></a>
     <p class="truncated-text">
@@ -7,9 +7,9 @@
       <a class="more-link" href="/recipe/{{recipe.id}}">Read more ></a>
     </p>
   </div>
-  <div>
-    <h3>Recent Recipes</h3>
-    <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:5:0" >
+  <h3>Recent Recipes</h3>
+  <div class="recent-recipes">
+    <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:6:1" >
       <img class="recipe-img-square" src="{{recipe.image1}}">
       <div class="recent-recipe-text">
         <h4>{{recipe.title}}</h4>
@@ -19,10 +19,6 @@
             <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
           </span>
         </div>
-        <!-- <p class="truncated-text">
-          {{recipe.desc1 | limitTo: 200}} ...
-          <span class="more-link">></span>
-        </p> -->
       </div>
     </a>
   </div>

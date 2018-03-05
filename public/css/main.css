@@ -115,15 +115,6 @@ footer {
   font-size: 36px;
 }
 
-/*.card {
-  background-color: #FAFAEF;
-  padding: 40px 20px;
-}
-
-.card-img {
-  height: 310px;
-}*/
-
 main {
   width: 90%;
   margin: 50px auto;
@@ -299,16 +290,6 @@ main {
   margin-right: 15px;
 }
 
-.home-img, .recipe-img, .recipe-img-1, .recipe-img-2, .recipe-img-3, .recipe-img-4 {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  display: block;
-  background-color: lightgrey;
-}
-
 .add-img {
   height: 100%;
   width: 100%;
@@ -317,7 +298,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 
 .recipe-title-1, .recipe-title-2 {
   font-family: "Tex Gyre Adventor Bold";
@@ -340,36 +320,14 @@ main {
   font-family: "Tex Gyre Adventor Bold";
 }
 
-.recipe-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.recipe-card h3 {
-  text-align: center;
-  font-size: 26px;
-  margin: 0 0 60px 0;
-  font-weight: 300;
-}
-
 .recipe-rows h4 {
   font-size: 20px;
   font-weight: 500;
   margin: 0 0 20px 0;
 }
 
-.recipe-rows p, .recipe-section-4 li, .category-title {
+.category-title {
   margin: 0 0 10px 0;
-}
-
-.card {
-  background-color: #FAFAEF;
-  padding: 40px 20px;
-}
-
-.card-img {
-  height: 310px;
 }
 
 input {
@@ -423,11 +381,6 @@ input {
   flex-direction: row;
 }
 
-.recipe-section-4 h2, .recipe-title-2 {
-  font-size: 24px;
-  margin: 30px 0;
-}
-
 #recipe-tags {
   margin: 30px 0;
 }
@@ -472,9 +425,6 @@ input {
   margin: 30px 0;
 }
 
-
-
-
 #icons {
   display: flex;
   flex-direction: row;
@@ -485,7 +435,6 @@ input {
   height: 60px;
   width: 60px;
 }
-
 
 .textarea-1, .textarea-2, .textarea-3  {
   width: 100%;

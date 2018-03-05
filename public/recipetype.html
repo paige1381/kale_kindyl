@@ -1,17 +1,19 @@
-<div class="main-section-bkg">
+<div class="main-section">
   <h2>{{ctrl.recipeTypeTitle}}</h2>
-  <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.recipeType | limitTo:4:0" >
-    <img class="recipe-img-square" id="{{recipe.imageId}}" src="{{recipe.image1}}">
-    <div>
-      <h4>{{recipe.title}}</h4>
-      <div class="recent-recipe-tags">
-        <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
-          {{tag.title}}
-          <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
-        </span>
+  <div class="recent-recipes">
+    <a class="recent-recipe" href="/recipe/{{recipe.id}}" ng-repeat="recipe in ctrl.recipeType" >
+      <img class="recipe-img-square" src="{{recipe.image1}}">
+      <div>
+        <h4>{{recipe.title}}</h4>
+        <div class="recent-recipe-tags">
+          <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
+            {{tag.title}}
+            <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
+          </span>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>
 <ng-include src="'../partials/bio.html'">
 </ng-include>
