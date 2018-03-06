@@ -131,7 +131,7 @@ main {
   box-sizing: border-box;
 }
 
-.main-section h2, .main-section-bkg h2, .main-section h3 {
+.main-section h2, .main-section h3 {
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -147,15 +147,16 @@ main {
   margin: 50px 0 20px 0;
 }
 
-.main-section h4, .main-section-bkg h4 {
+.main-section h4 {
   display: flex;
   font-size: 17px;
   font-weight: 400;
   margin: 0 0 5px 0;
   white-space: normal;
+  flex-wrap: wrap;
 }
 
-.recipe-img-portrait {
+.recipe-img-portrait, .recipe-img-sm {
   width: 100%;
   height: 400px;
   object-fit: cover;
@@ -231,8 +232,7 @@ main {
 .bio-col {
   align-items: center;
   margin: 40px auto 0 auto;
-  background-color: #FAFAEF;
-  padding: 50px 20px;
+  padding: 0 10px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -326,10 +326,6 @@ main {
   margin: 0 0 20px 0;
 }
 
-.category-title {
-  margin: 0 0 10px 0;
-}
-
 input {
   width: 200px;
 }
@@ -344,31 +340,26 @@ input {
   font-size: 16px;
   border: 1px solid #757575;
   padding: 5px;
-  margin-bottom: 10px;
 }
 
 .add-text {
   margin: 5px 0 5px 10px;
 }
 
-.add {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.add:hover {
+.add-tag:hover {
   opacity: .6;
 }
 
-.add > p {
+.add-tag > p {
   margin: 0;
 }
 
-.add-tag {
-  margin-left: 0;
+.add-icon, .remove-icon {
+  font-size: 21px;
+}
+
+.remove-icon {
+  cursor: pointer;
 }
 
 .create-tag {
@@ -379,13 +370,15 @@ input {
 .tag-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
 #recipe-tags {
   margin: 30px 0;
 }
 
-#recipe-tags span {
+#recipe-tags span, .add-tag {
   display: inline-block;
   background-color: rgba(0, 0, 0, .85);
   color: white;
@@ -396,9 +389,21 @@ input {
   letter-spacing: 1.5px;
 }
 
+.add-tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 0;
+  width: 150px;
+  cursor: pointer;
+  justify-content: center;
+}
+
 #prep li {
   list-style: none;
   margin: 5px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 #directions {
@@ -425,6 +430,15 @@ input {
   margin: 30px 0;
 }
 
+.create-img {
+  background-color: #757575;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .6;
+  flex-direction: column;
+}
+
 #icons {
   display: flex;
   flex-direction: row;
@@ -448,6 +462,7 @@ input {
 
 .textarea-3 {
   height: 175px;
+  margin: 0;
 }
 
 select {

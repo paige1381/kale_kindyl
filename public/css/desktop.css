@@ -76,10 +76,13 @@
   }
 
   .recipe-img-square {
-    width: 150px;
-    height: 150px;
+    width: 203.33333px;
+    height: 203.33333px;
   }
 
+  .recipe-img-sm {
+    width: 315px;
+  }
 
   #about {
     padding: 0 20px;
@@ -137,7 +140,6 @@
   }
 
   .textarea-1 {
-    width: 435px;
     padding: 10px;
   }
 

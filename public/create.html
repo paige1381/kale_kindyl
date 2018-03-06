@@ -1,176 +1,125 @@
-<form id="recipe" ng-submit="ctrl.processCreateForm()">
-
-  <div class="recipe-rows">
-    <input class="recipe-title-1" type="text" required ng-model="ctrl.formData.title" placeholder="Recipe title">
-    <div id="recipe-type">
-      <h4>Recipe type:</h4>
-      <select ng-model="ctrl.formData.recipeType" title="Select type" ng-required="true">
-        <option selected value="entree">Entree</option>
-        <option value="breakfast">Breakfast</option>
-        <option value="dessert">Dessert</option>
-        <option value="side">Side/Snack</option>
-        <option value="drink">Drink</option>
-      </select>
+<form class="main-section" ng-submit="ctrl.processCreateForm()">
+  <input class="recipe-title-1" type="text" required ng-model="ctrl.formData.title" placeholder="Recipe title">
+  <div id="recipe-type">
+    <h4>Recipe type:</h4>
+    <select ng-model="ctrl.formData.recipeType" title="Select type" ng-required="true">
+      <option selected value="entree">Entree</option>
+      <option value="breakfast">Breakfast</option>
+      <option value="dessert">Dessert</option>
+      <option value="side">Side/Snack</option>
+      <option value="drink">Drink</option>
+    </select>
+  </div>
+  <div class="recipe-img-portrait create-img">
+    <p>Upload image:</p>
+    <input type="text" class="category-title" placeholder="Image URL"  ng-model="ctrl.formData.image1">
+  </div>
+  <textarea class="textarea-1" ng-model="ctrl.formData.desc1" required></textarea>
+  <div class="recipe-imgs">
+    <div class="recipe-img-sm create-img">
+      <p>Upload image:</p>
+      <input ng-model="ctrl.formData.image2" type="text" class="category-title" placeholder="Image URL">
     </div>
-    <div class="recipe-section-1 create-row">
-      <div class="recipe-img-1">
-        <div class="add-img">
-          <p>Upload image:</p>
-          <input type="text" class="category-title" placeholder="Image URL"  ng-model="ctrl.formData.image1">
-        </div>
-      </div>
-      <textarea class="textarea-1" ng-model="ctrl.formData.desc1" required>Enter text here</textarea>
-    </div>
-    <div class="recipe-section-3">
-      <div class="recipe-img-2">
-        <div class="add-img">
-          <p>Upload image:</p>
-          <input ng-model="ctrl.formData.image2" type="text" class="category-title" placeholder="Image URL">
-        </div>
-      </div>
-      <div class="recipe-img-3">
-        <div class="add-img">
-          <p>Upload image:</p>
-          <input ng-model="ctrl.formData.image3" type="text" class="category-title" placeholder="Image URL">
-        </div>
-      </div>
-    </div>
-    <div class="recipe-section-2">
-      <textarea ng-model="ctrl.formData.desc2" class="textarea-2">Enter text here</textarea>
-    </div>
-    <div class="recipe-section-4">
-      <input class="recipe-title-2" type="text" placeholder="Recipe title">
-      <textarea ng-model="ctrl.formData.desc3" class="textarea-3">Enter text here</textarea>
-      <div id="recipe-tags">
-        <div class="create-tag" ng-repeat="tag in ctrl.tags">
-          <div class="tag-row">
-            <input type="text" class="category-title" placeholder="Tag">
-            <i class="material-icons" ng-click="ctrl.removeTag($index)">close</i>
-          </div>
-        </div>
-        <div class="add add-tag" ng-click="ctrl.addTag()">
-          <i class="material-icons">add</i>
-          <p>Add a tag</p>
-        </div>
-      </div>
-      <ul id="prep">
-        <li>
-          Prep time:
-          <select ng-model="ctrl.formData.prep">
-            <option selected value="none">None</option>
-            <option value="5 min">5 min</option>
-            <option value="15 min">15 min</option>
-            <option value="30 min">30 min</option>
-            <option value="45 min">45 min</option>
-            <option value="1 hr">1 hr</option>
-            <option value="1.5 hr">1.5 hr</option>
-            <option value="2 hr">2 hr</option>
-            <option value="2.5 hr">2.5 hr</option>
-            <option value="3 hr">3 hr</option>
-            <option value="3.5 hr">3.5 hr</option>
-            <option value="4 hr">4 hr</option>
-            <option value="4.5 hr">4.5 hr</option>
-            <option value="5 hr">5 hr</option>
-          </select>
-        </li>
-        <li>
-          Cook time:
-          <select ng-model="ctrl.formData.cook">
-            <option selected value="none">None</option>
-            <option value="5 min">5 min</option>
-            <option value="15 min">15 min</option>
-            <option value="30 min">30 min</option>
-            <option value="45 min">45 min</option>
-            <option value="1 hr">1 hr</option>
-            <option value="1.5 hr">1.5 hr</option>
-            <option value="2 hr">2 hr</option>
-            <option value="2.5 hr">2.5 hr</option>
-            <option value="3 hr">3 hr</option>
-            <option value="3.5 hr">3.5 hr</option>
-            <option value="4 hr">4 hr</option>
-            <option value="4.5 hr">4.5 hr</option>
-            <option value="5 hr">5 hr</option>
-          </select>
-        </li>
-        <li>
-          Serves:
-          <select ng-model="ctrl.formData.serves">
-            <option selected value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </li>
-      </ul>
-      <div id="ingredients">
-        <h3>Ingredients</h3>
-        <p>
-          Ingredient Categories
-          <select>
-            <option selected value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
-        </p>
-        <div class="category">
-          <input type="text" class="category-title" placeholder="Category Title">
-          <input type="text" class="category-title add-text" placeholder="Ingredient">
-          <input type="text" class="category-title add-text" placeholder="Ingredient">
-          <div class="add">
-            <i class="material-icons">add</i>
-            <p>Add an ingredient</p>
-          </div>
-        </div>
-        <div class="category">
-          <input type="text" class="category-title" placeholder="Category Title">
-          <input type="text" class="category-title add-text" placeholder="Ingredient">
-          <div class="add">
-            <i class="material-icons">add</i>
-            <p>Add an ingredient</p>
-          </div>
-        </div>
-      </div>
-      <div id="directions">
-        <h3>Directions</h3>
-        <p>
-          Direction Categories
-          <select>
-            <option selected value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
-        </p>
-        <div class="category">
-          <input type="text" class="category-title" placeholder="Category Title">
-          <input type="text" class="category-title add-text" placeholder="Step">
-          <div class="add">
-            <i class="material-icons">add</i>
-            <p>Add a step</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="form-buttons">
-      <button type="submit" value="Submit">
-        Publish
-      </button>
-      <button>
-        Reset
-      </button>
+    <div class="recipe-img-sm create-img">
+      <p>Upload image:</p>
+      <input ng-model="ctrl.formData.image3" type="text" class="category-title" placeholder="Image URL">
     </div>
   </div>
-
-  <ng-include src="'../partials/bio.html'">
-  </ng-include>
-
+  <div class="recipe-section-2">
+    <textarea ng-model="ctrl.formData.desc2" class="textarea-2"></textarea>
+  </div>
+  <div class="recipe-section-4">
+    <input class="recipe-title-2" type="text" placeholder="Recipe title">
+    <textarea ng-model="ctrl.formData.desc3" class="textarea-3"></textarea>
+    <div id="recipe-tags">
+      <div class="create-tag" ng-repeat="tag in ctrl.tags">
+        <div class="tag-row">
+          <input type="text" class="category-title" placeholder="Enter tag name">
+          <i class="material-icons remove-icon" ng-click="ctrl.removeTag($index)">close</i>
+        </div>
+      </div>
+      <div class="add-tag">
+        <i class="material-icons add-icon" ng-click="ctrl.addTag()">add</i>
+        <p ng-click="ctrl.addTag()">Add a tag</p>
+      </div>
+    </div>
+    <ul id="prep">
+      <li>
+        <p>Prep time:</p>
+        <input type="text" class="category-title" placeholder="Enter prep time"  ng-model="ctrl.formData.prep">
+      </li>
+      <li>
+        <p>Cook time:</p>
+        <input type="text" class="category-title" placeholder="Enter cook time"  ng-model="ctrl.formData.cook">
+      </li>
+      <li>
+        <p>Serves:</p>
+        <input type="text" class="category-title" placeholder="Enter servings"  ng-model="ctrl.formData.serves">
+      </li>
+    </ul>
+    <div id="ingredients">
+      <h3>Ingredients</h3>
+      <p>
+        Ingredient Categories
+        <select>
+          <option selected value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </p>
+      <div class="category">
+        <input type="text" class="category-title" placeholder="Category Title">
+        <input type="text" class="category-title add-text" placeholder="Ingredient">
+        <input type="text" class="category-title add-text" placeholder="Ingredient">
+        <div class="add">
+          <i class="material-icons">add</i>
+          <p>Add an ingredient</p>
+        </div>
+      </div>
+      <div class="category">
+        <input type="text" class="category-title" placeholder="Category Title">
+        <input type="text" class="category-title add-text" placeholder="Ingredient">
+        <div class="add">
+          <i class="material-icons">add</i>
+          <p>Add an ingredient</p>
+        </div>
+      </div>
+    </div>
+    <div id="directions">
+      <h3>Directions</h3>
+      <p>
+        Direction Categories
+        <select>
+          <option selected value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </p>
+      <div class="category">
+        <input type="text" class="category-title" placeholder="Category Title">
+        <input type="text" class="category-title add-text" placeholder="Step">
+        <div class="add">
+          <i class="material-icons">add</i>
+          <p>Add a step</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-buttons">
+    <button type="submit" value="Submit">
+      Publish
+    </button>
+    <button>
+      Reset
+    </button>
+  </div>
 </form>
+
+<ng-include src="'../partials/bio.html'">
+</ng-include>
