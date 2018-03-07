@@ -5,9 +5,29 @@ app.controller('MainController', ['$http', function($http) {
 }])
 
 
+app.controller('BioColController', ['$http', function($http) {
+
+  this.url = 'http://localhost:3000/tags/';
+
+  this.getTags = () => {
+    $http({
+      method: 'GET',
+      url: this.url
+    }).then(response => {
+      this.tags = response.data;
+      console.log(this.tags);
+    }).catch(error => {
+      console.log('error:', error);
+    });
+  }
+
+  this.getTags();
+}])
+
+
 app.controller('HomeController', ['$http', function($http) {
 
-  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
+  this.url = 'http://localhost:3000/recipes/';
 
   this.getSnapshotRecipes = () => {
     $http({
@@ -28,7 +48,7 @@ app.controller('HomeController', ['$http', function($http) {
 
 app.controller('CreateController', function($http) {
 
-  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
+  this.url = 'http://localhost:3000/recipes/';
   this.formData = {};
   this.tagCount = 0;
   this.tags = [];
@@ -70,7 +90,7 @@ app.controller('AboutController', function() {
 
 app.controller('RecipesController', function($http) {
 
-  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
+  this.url = 'http://localhost:3000/recipes/';
 
   this.getSnapShotAll = () => {
     $http({
@@ -165,7 +185,7 @@ app.controller('RecipesController', function($http) {
 
 app.controller('RecipeTypeController', function($http, $routeParams) {
 
-  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
+  this.url = 'http://localhost:3000/recipes/';
 
   if ($routeParams.id === "all") {
     this.recipeTypeId = "";
@@ -214,7 +234,7 @@ app.controller('RecipeTypeController', function($http, $routeParams) {
 
 app.controller('RecipeController', function($http, $routeParams) {
 
-  this.url = 'https://kale-kindyl-api.herokuapp.com/recipes/';
+  this.url = 'http://localhost:3000/recipes/';
 
   this.recipeId = $routeParams.id;
 
@@ -231,20 +251,6 @@ app.controller('RecipeController', function($http, $routeParams) {
   }
 
   this.getRecipe();
-
-  this.getTags = () => {
-    $http({
-      method: 'GET',
-      url: this.url + this.recipeId + '/tags'
-    }).then(response => {
-      this.tags = response.data;
-      console.log(this.recipe);
-    }).catch(error => {
-      console.log('error:', error);
-    });
-  }
-
-  this.getTags();
 
 })
 

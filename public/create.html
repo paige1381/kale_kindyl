@@ -1,6 +1,6 @@
 <form class="main-section" ng-submit="ctrl.processCreateForm()">
   <input class="recipe-title-1" type="text" required ng-model="ctrl.formData.title" placeholder="Recipe title">
-  <div id="recipe-type">
+  <div class="recipe-type">
     <h4>Recipe type:</h4>
     <select ng-model="ctrl.formData.recipeType" title="Select type" ng-required="true">
       <option selected value="entree">Entree</option>
@@ -31,7 +31,7 @@
   <div class="recipe-section-4">
     <input class="recipe-title-2" type="text" placeholder="Recipe title">
     <textarea ng-model="ctrl.formData.desc3" class="textarea-3"></textarea>
-    <div id="recipe-tags">
+    <div class="recipe-tags">
       <div class="create-tag" ng-repeat="tag in ctrl.tags">
         <div class="tag-row">
           <input type="text" class="category-title" placeholder="Enter tag name">
@@ -43,7 +43,7 @@
         <p ng-click="ctrl.addTag()">Add a tag</p>
       </div>
     </div>
-    <ul id="prep">
+    <ul class="prep">
       <li>
         <p>Prep time:</p>
         <input type="text" class="category-title" placeholder="Enter prep time"  ng-model="ctrl.formData.prep">
@@ -57,7 +57,7 @@
         <input type="text" class="category-title" placeholder="Enter servings"  ng-model="ctrl.formData.serves">
       </li>
     </ul>
-    <div id="ingredients">
+    <div class="ingredients">
       <h3>Ingredients</h3>
       <p>
         Ingredient Categories
@@ -88,7 +88,7 @@
         </div>
       </div>
     </div>
-    <div id="directions">
+    <div class="directions">
       <h3>Directions</h3>
       <p>
         Direction Categories

@@ -11,18 +11,18 @@
     display: none;
   }
 
-  #menu {
+  .menu {
     display: none;
   }
 
-  #header {
+  .header {
     width: 1000px;
     height: 200px;
     flex-wrap: nowrap;
     align-items: center;
   }
 
-  #contact, #credit {
+  .contact, .credit {
     width: 1000px;
   }
 
@@ -38,12 +38,12 @@
     font-family: "Tex Gyre Adventor Bold";
   }
 
-  #title-link {
+  .title-link {
     width: 70%;
     box-sizing: border-box;
   }
 
-  #title {
+  .title {
     width: 100%;
     font-size: 40px;
   }
@@ -63,9 +63,14 @@
     margin: 0;
     box-sizing: border-box;
     width: 350px;
+    padding: 0 30px;
   }
 
-  #bio-img {
+  .bio {
+    padding: 0;
+  }
+
+  .bio-img {
     width: 115px;
     height: 115px;
     margin-bottom: 20px;
@@ -84,29 +89,29 @@
     width: 315px;
   }
 
-  #about {
+  .about {
     padding: 0 20px;
     flex-direction: row;
     align-items: flex-start;
     width: 980px;
   }
 
-  #about-img {
+  .about-img {
     width: 250px;
     height: 250px;
     margin: 0 40px 0 0;
   }
 
-  #about h4 {
+  .about h4 {
     font-size: 20px;
   }
 
-  #about p {
+  .about p {
     font-size: 18px;
     letter-spacing: .5px;
   }
 
-  #contact {
+  .contact {
     text-transform: uppercase;
     justify-content: center;
     letter-spacing: 3px;
@@ -119,16 +124,16 @@
     font-family: "Tex Gyre Adventor Bold";
   }
 
-  #contact > h3 {
+  .contact > h3 {
     font-size: 26px;
     margin: 0 0 15px 0;
   }
 
-  #icons {
+  .icons {
     width: 250px;
   }
 
-  #icons a {
+  .icons a {
     height: 60px;
     width: 60px;
   }

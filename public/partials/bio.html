@@ -1,7 +1,26 @@
-<div class="bio-col">
-  <div id="bio">
-    <img id="bio-img" src="./css/images/about.jpg">
-    <div id="bio-text">
+<div class="bio-col" ng-controller="BioColController as ctrl">
+
+  <div class="bio-col-section">
+    <div class="search">
+      <i class="material-icons">search</i>
+      <input type="text" placeholder="Seach Kale Kindyl"></input>
+    </div>
+  </div>
+
+  <div class="bio-col-section">
+    <h3>Recipe Tags</h3>
+    <div class="recipe-tag-row" ng-repeat="tag in ctrl.tags">
+      <div class="recipe-circles">
+        <div class="circle">
+          {{tag.symbol}}
+        </div>
+      </div>
+      <h4>= {{tag.title}}</h4>
+    </div>
+  </div>
+  <div class="bio">
+    <img class="bio-img" src="./css/images/about.jpg">
+    <div class="bio-text">
       <h4>Hi, I'm Kindyl</h4>
       <p class="truncated-text">Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts.</p>
       <a class="more-link" href="/about">Read more ></a>

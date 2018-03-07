@@ -2,6 +2,13 @@
   <div ng-repeat="recipe in ctrl.snapshotRecipes | limitTo:1:0">
     <a href="/recipe/{{recipe.id}}"><h2>{{recipe.title}}</h2></a>
     <a href="/recipe/{{recipe.id}}"><img class="recipe-img-portrait" src="{{recipe.image1}}"></a>
+    <div class="recent-recipe-tags">
+      <span class="recipe-circles" ng-repeat="tag in recipe.tags">
+        <div class="circle">
+          {{tag.symbol}}
+        </div>
+      </span>
+    </div>
     <p class="truncated-text">
       {{recipe.desc1 | limitTo: 200}} ...
       <a class="more-link" href="/recipe/{{recipe.id}}">Read more ></a>
@@ -14,10 +21,11 @@
       <div class="recent-recipe-text">
         <h4>{{recipe.title}}</h4>
         <div class="recent-recipe-tags mobile">
-          <span class="recent-recipe-tag" ng-repeat="tag in recipe.tags | limitTo:3">
-            {{tag.title}}
-            <span class="recent-recipe-tag" ng-if="$index < recipe.tags.length - 1">, </span>
-          </span>
+            <span class="recipe-circles recipe-circles-sm" ng-repeat="tag in recipe.tags | limitTo:3">
+              <div class="circle circle-sm">
+                {{tag.symbol}}
+              </div>
+            </span>
         </div>
       </div>
     </a>

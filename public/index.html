@@ -17,8 +17,8 @@
   <body>
 
     <header>
-      <div id="header">
-        <a href="/home" id="title-link"><h1 id="title">Kale Kindyl</h1></a>
+      <div class="header">
+        <a href="/home" class="title-link"><h1 class="title">Kale Kindyl</h1></a>
         <nav class="desktop">
           <a href="/recipes"><h3>Recipes</h3></a>
           <a href="/about"><h3>About</h3></a>
@@ -26,7 +26,7 @@
       </div>
     </header>
     <div ng-controller="MainController as ctrl">
-      <div id="menu">
+      <div class="menu">
         <i class="material-icons" ng-click="ctrl.menu = !ctrl.menu">menu</i>
       </div>
       <nav ng-class="ctrl.menu? 'slide' : ''" class="slide-nav tablet mobile">
@@ -40,15 +40,15 @@
     </main>
 
     <footer>
-      <section id="contact">
+      <section class="contact">
         <h3 class="desktop">Follow me!</h3>
-        <div id="icons">
+        <div class="icons">
           <a href="https://www.instagram.com/kalekindyl/?hl=en" target="_blank"><img src="./css/images/instagram.svg"></a>
           <a href="https://www.pinterest.com/kindyls/?eq=kindyl&etslf=NaN" target="_blank"><img src="./css/images/pinterest.svg"></a>
           <a href="#"><img src="./css/images/snapchat.svg"></a>
         </div>
       </section>
-      <div id="credit">
+      <div class="credit">
         <h6>Icons used under <a href="https://creativecommons.org/licenses/by/2.5/" target="_blank">Creative Commons (Attribution 2.5 Generic) license</a></h6>
         <h6>Website created by <a href="http://paigeboyer.com/" target="_blank">Paige Boyer</a></h6>
         <h6>Photos sourced from <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></h6>
