@@ -1,8 +1,8 @@
 <form class="main-section" ng-submit="ctrl.processCreateForm()">
-  <input class="recipe-title-1" type="text" required ng-model="ctrl.formData.title" placeholder="Recipe title">
+  <input class="recipe-title-1" type="text" required ng-model="ctrl.recipeData.title" placeholder="Recipe title">
   <div class="recipe-type">
     <h4>Recipe type:</h4>
-    <select ng-model="ctrl.formData.recipeType" title="Select type" ng-required="true">
+    <select ng-model="ctrl.recipeData.recipeType" title="Select type" ng-required="true">
       <option selected value="entree">Entree</option>
       <option value="breakfast">Breakfast</option>
       <option value="dessert">Dessert</option>
@@ -12,56 +12,49 @@
   </div>
   <div class="recipe-img-portrait create-img">
     <p>Upload image:</p>
-    <input type="text" class="category-title" placeholder="Image URL"  ng-model="ctrl.formData.image1">
+    <input type="text" class="category-title" placeholder="Image URL"  ng-model="ctrl.recipeData.image1">
   </div>
-  <textarea class="textarea-1" ng-model="ctrl.formData.desc1" required></textarea>
+  <textarea class="textarea-1" ng-model="ctrl.recipeData.desc1" required></textarea>
   <div class="recipe-imgs">
     <div class="recipe-img-sm create-img">
       <p>Upload image:</p>
-      <input ng-model="ctrl.formData.image2" type="text" class="category-title" placeholder="Image URL">
+      <input ng-model="ctrl.recipeData.image2" type="text" class="category-title" placeholder="Image URL">
     </div>
     <div class="recipe-img-sm create-img">
       <p>Upload image:</p>
-      <input ng-model="ctrl.formData.image3" type="text" class="category-title" placeholder="Image URL">
+      <input ng-model="ctrl.recipeData.image3" type="text" class="category-title" placeholder="Image URL">
     </div>
   </div>
   <div class="recipe-section-2">
-    <textarea ng-model="ctrl.formData.desc2" class="textarea-2"></textarea>
+    <textarea ng-model="ctrl.recipeData.desc2" class="textarea-2"></textarea>
   </div>
   <div class="recipe-section-4">
     <input class="recipe-title-2" type="text" placeholder="Recipe title">
-    <textarea ng-model="ctrl.formData.desc3" class="textarea-3"></textarea>
+    <textarea ng-model="ctrl.recipeData.desc3" class="textarea-3"></textarea>
     <div class="recipe-tags">
-      <div class="create-tag" ng-repeat="tag in ctrl.tags">
-        <div class="tag-row">
-          <input type="text" class="category-title" placeholder="Enter tag name">
-          <i class="material-icons remove-icon" ng-click="ctrl.removeTag($index)">close</i>
-        </div>
-      </div>
-      <div class="add-tag">
-        <i class="material-icons add-icon" ng-click="ctrl.addTag()">add</i>
-        <p ng-click="ctrl.addTag()">Add a tag</p>
+      <div ng-repeat="tag in ctrl.tags">
+        <input class="checkbox" type="checkbox" name="tag" value="{{tag.symbol}}" ng-model="ctrl.recipeData.tags.symbol[$index]">{{tag.title}}</br>
       </div>
     </div>
     <ul class="prep">
       <li>
         <p>Prep time:</p>
-        <input type="text" class="category-title" placeholder="Enter prep time"  ng-model="ctrl.formData.prep">
+        <input type="text" class="category-title" placeholder="Enter prep time"  ng-model="ctrl.recipeData.prep">
       </li>
       <li>
         <p>Cook time:</p>
-        <input type="text" class="category-title" placeholder="Enter cook time"  ng-model="ctrl.formData.cook">
+        <input type="text" class="category-title" placeholder="Enter cook time"  ng-model="ctrl.recipeData.cook">
       </li>
       <li>
         <p>Serves:</p>
-        <input type="text" class="category-title" placeholder="Enter servings"  ng-model="ctrl.formData.serves">
+        <input type="text" class="category-title" placeholder="Enter servings"  ng-model="ctrl.recipeData.serves">
       </li>
     </ul>
-    <div class="ingredients">
+    <div>
       <h3>Ingredients</h3>
       <p>
         Ingredient Categories
-        <select>
+        <select ng-model="ctrl.numIngredientCategories" ng-change="ctrl.ingredientCategories()">
           <option selected value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -70,21 +63,19 @@
           <option value="6">6</option>
         </select>
       </p>
-      <div class="category">
-        <input type="text" class="category-title" placeholder="Category Title">
-        <input type="text" class="category-title add-text" placeholder="Ingredient">
-        <input type="text" class="category-title add-text" placeholder="Ingredient">
-        <div class="add">
-          <i class="material-icons">add</i>
-          <p>Add an ingredient</p>
+      <div class="category" ng-repeat="category in ctrl.ingredientsData">
+        <div class="category-row">
+          <input type="text" class="category-title" placeholder="Category Title" required ng-model="ctrl.ingredientsData[$index].title">
+          <i class="material-icons" ng-click="ctrl.removeIngredientCategories($index)">close</i>
         </div>
-      </div>
-      <div class="category">
-        <input type="text" class="category-title" placeholder="Category Title">
-        <input type="text" class="category-title add-text" placeholder="Ingredient">
-        <div class="add">
-          <i class="material-icons">add</i>
-          <p>Add an ingredient</p>
+        <div class="category-row" ng-repeat="ingredient in ctrl.ingredientsData[$index].ingredients">
+          <li>
+            <input type="text" class="category-title add-text" placeholder="Ingredient" required ng-model="ctrl.ingredientsData[$parent.$index].ingredients[$index].title">
+          </li>
+          <i class="material-icons" ng-click="ctrl.removeIngredients($parent.$index, $index)">close</i>
+        </div>
+        <div class="button-sm" ng-click="ctrl.addIngredients($index)">
+          Add ingredient
         </div>
       </div>
     </div>

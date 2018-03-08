@@ -48,38 +48,78 @@ app.controller('HomeController', ['$http', function($http) {
 
 app.controller('CreateController', function($http) {
 
-  this.url = 'http://localhost:3000/recipes/';
-  this.formData = {};
-  this.tagCount = 0;
-  this.tags = [];
+  this.recipeData = {};
+  this.ingredientsData = [];
+  this.directionsData = [];
+  this.numIngredientCategories = null;
+  this.numDirectionCategories = null;
+
+  this.ingredientCategories = () => {
+    if (this.numIngredientCategories > this.ingredientsData.length) {
+      this.numIngredientCategories = this.numIngredientCategories - this.ingredientsData.length;
+      for (let i = 0; i < this.numIngredientCategories; i++) {
+        this.ingredientsData.push({title: null, ingredients: []})
+      }
+    }
+    else {
+      this.ingredientsData.splice(this.numIngredientCategories, this.ingredientsData.length - this.numIngredientCategories);
+    }
+    console.log(this.ingredientsData);
+    this.numIngredientCategories = null;
+  }
+
+  this.removeIngredientCategories = (index) => {
+    this.ingredientsData.splice(index, 1);
+    console.log(this.ingredientsData);
+  }
+
+  this.addIngredients = (index) => {
+    console.log(index);
+    this.ingredientsData[index].ingredients.push({title: null});
+    console.log(this.ingredientsData[index]);
+  }
+
+  this.removeIngredients = (parentIndex, index) => {
+    this.ingredientsData[parentIndex].ingredients.splice(index, 1);
+  }
+
+
+  this.directionCategories = () => {
+    this.arrDirectionCategories = [];
+    for (let i = 0; i < this.numDirectionCategories; i++) {
+      this.arrDirectionCategories.push(i);
+    }
+  }
 
   this.processCreateForm = () => {
-    console.log(this.formData);
+    console.log(this.recipeData);
     $http({
       method: 'POST',
-      url: this.url,
-      data: this.formData
+      url: 'http://localhost:3000/recipes/',
+      data: this.recipeData
     }).then(response => {
       console.log(response.data);
-      this.formData = {};
+      this.recipeData = {};
     }).catch(error => {
       console.log('error:', error);
     })
   }
 
-  this.addTag = () => {
-    this.tagCount ++;
-    this.tags.push(this.tagCount - 1);
-    console.log('this.tags:', this.tags);
-    console.log('this.tagCount:', this.tagCount);
+  this.getTags = () => {
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/tags/'
+    }).then(response => {
+      this.tags = response.data;
+      console.log(this.tags);
+    }).catch(error => {
+      console.log('error:', error);
+    });
   }
 
-  this.removeTag = (index) => {
-    this.tagCount --;
-    this.tags.splice(index, 1);
-    console.log('this.tags:', this.tags);
-    console.log('this.tagCount:', this.tagCount);
-  }
+  this.getTags();
+
+
 })
 
 
@@ -237,6 +277,20 @@ app.controller('RecipeController', function($http, $routeParams) {
   this.url = 'http://localhost:3000/recipes/';
 
   this.recipeId = $routeParams.id;
+  this.ingredients = [];
+
+  this.getIngredients = (id) => {
+    console.log(id);
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/ingredient_categories/' + id
+    }).then(response => {
+      this.ingredients.push(response.data);
+      console.log(this.ingredients);
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
 
   this.getRecipe = () => {
     $http({
@@ -245,6 +299,10 @@ app.controller('RecipeController', function($http, $routeParams) {
     }).then(response => {
       this.recipe = response.data;
       console.log(this.recipe);
+      console.log();
+      for (let i = 0; i < this.recipe.ingredient_categories.length; i++) {
+        this.getIngredients(this.recipe.ingredient_categories[i].id)
+      }
     }).catch(error => {
       console.log('error:', error);
     });
