@@ -414,6 +414,10 @@ input {
   cursor: pointer;
 }
 
+.create-directions {
+  margin: 0;
+}
+
 .add-text {
   margin: 5px 0;
 }
@@ -423,6 +427,7 @@ input {
 }
 
 .add-tag > p {
+
   margin: 0;
 }
 
@@ -555,6 +560,7 @@ select {
 .form-buttons {
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 button {

@@ -82,22 +82,35 @@
     <div class="directions">
       <h3>Directions</h3>
       <p>
-        Direction Categories
-        <select>
+        Directions Categories
+        <select ng-model="ctrl.numDirectionCategories" ng-change="ctrl.directionCategories()">
           <option selected value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
           <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
         </select>
       </p>
-      <div class="category">
-        <input type="text" class="category-title" placeholder="Category Title">
-        <input type="text" class="category-title add-text" placeholder="Step">
-        <div class="add">
-          <i class="material-icons">add</i>
-          <p>Add a step</p>
+      <div class="category" ng-repeat="category in ctrl.directionsData">
+        <div class="category-row">
+          <input type="text" class="category-title" placeholder="Category Title" required ng-model="ctrl.directionsData[$index].title">
+          <i class="material-icons" ng-click="ctrl.removeDirectionCategories($index)">close</i>
+        </div>
+        <ol class="create-directions">
+          <div class="category-row" ng-repeat="direction in ctrl.directionsData[$index].directions">
+            <li>
+              <input type="text" class="category-title add-text" placeholder="Step" required ng-model="ctrl.directionsData[$parent.$index].directions[$index].title">
+            </li>
+            <i class="material-icons" ng-click="ctrl.removeDirections($parent.$index, $index)">close</i>
+          </div>
+        </ol>
+        <div class="button-sm" ng-click="ctrl.addDirections($index)">
+          Add step
         </div>
       </div>
     </div>

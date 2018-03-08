@@ -83,12 +83,33 @@ app.controller('CreateController', function($http) {
     this.ingredientsData[parentIndex].ingredients.splice(index, 1);
   }
 
-
   this.directionCategories = () => {
-    this.arrDirectionCategories = [];
-    for (let i = 0; i < this.numDirectionCategories; i++) {
-      this.arrDirectionCategories.push(i);
+    if (this.numDirectionCategories > this.directionsData.length) {
+      this.numDirectionCategories = this.numDirectionCategories - this.directionsData.length;
+      for (let i = 0; i < this.numDirectionCategories; i++) {
+        this.directionsData.push({title: null, directions: []})
+      }
     }
+    else {
+      this.directionsData.splice(this.numDirectionCategories, this.directionsData.length - this.numDirectionCategories);
+    }
+    console.log(this.directionsData);
+    this.numDirectionCategories = null;
+  }
+
+  this.removeDirectionCategories = (index) => {
+    this.directionsData.splice(index, 1);
+    console.log(this.directionsData);
+  }
+
+  this.addDirections = (index) => {
+    console.log(index);
+    this.directionsData[index].directions.push({title: null});
+    console.log(this.directionsData[index]);
+  }
+
+  this.removeDirections = (parentIndex, index) => {
+    this.directionsData[parentIndex].directions.splice(index, 1);
   }
 
   this.processCreateForm = () => {
