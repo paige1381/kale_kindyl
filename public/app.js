@@ -299,6 +299,7 @@ app.controller('RecipeController', function($http, $routeParams) {
 
   this.recipeId = $routeParams.id;
   this.ingredients = [];
+  this.directions = [];
 
   this.getIngredients = (id) => {
     console.log(id);
@@ -308,6 +309,20 @@ app.controller('RecipeController', function($http, $routeParams) {
     }).then(response => {
       this.ingredients.push(response.data);
       console.log(this.ingredients);
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.getDirections = (id) => {
+    console.log(id);
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/directions_categories/' + id
+    }).then(response => {
+      console.log(response.data);
+      this.directions.push(response.data);
+      console.log(this.directions);
     }).catch(error => {
       console.log('error:', error);
     })
@@ -323,6 +338,9 @@ app.controller('RecipeController', function($http, $routeParams) {
       console.log();
       for (let i = 0; i < this.recipe.ingredient_categories.length; i++) {
         this.getIngredients(this.recipe.ingredient_categories[i].id)
+      }
+      for (let i = 0; i < this.recipe.directions_categories.length; i++) {
+        this.getDirections(this.recipe.directions_categories[i].id)
       }
     }).catch(error => {
       console.log('error:', error);

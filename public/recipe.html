@@ -39,13 +39,12 @@
     </div>
     <div>
       <h3>Directions</h3>
-      <ol class="directions-list">
-        <li>Veggies sunt bona vobis, proinde vos postulo esse magis grape pea sprouts</li>
-        <li>Horseradish courgette maize spinach prairie turnip jícama coriander quandong</li>
-        <li>Gourd broccoli seakale gumbo. Parsley corn lentil zucchini radicchio maize burdock</li>
-        <li>Avocado sea lettuce</li>
-        <li>Garbanzo tigernut earthnut pea fennel</li>
-      </ol>
+      <div ng-repeat="category in ctrl.directions">
+        <h4 ng-if="ctrl.directions.length > 1">{{category.title}}</h4>
+        <ol class="directions-list">
+          <li ng-repeat="step in category.directions">{{step.title}}</li>
+        </ol>
+      </div>
     </div>
     <img class="recipe-img-portrait" src="{{ctrl.recipe.image1}}">
   </div>
