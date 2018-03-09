@@ -33,7 +33,7 @@
     <textarea ng-model="ctrl.recipeData.desc3" class="textarea-3"></textarea>
     <div class="recipe-tags">
       <div ng-repeat="tag in ctrl.tags">
-        <input class="checkbox" type="checkbox" name="tag" value="{{tag.symbol}}" ng-model="ctrl.recipeData.tags.symbol[$index]">{{tag.title}}</br>
+        <input class="checkbox" type="checkbox" value="tag.id" ng-model="tag.selected">{{tag.title}}</br>
       </div>
     </div>
     <ul class="prep">

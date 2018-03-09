@@ -112,15 +112,127 @@ app.controller('CreateController', function($http) {
     this.directionsData[parentIndex].directions.splice(index, 1);
   }
 
+  this.getRecipes = () => {
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/recipes/'
+    }).then(response => {
+      this.recipes = response.data;
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
   this.processCreateForm = () => {
-    console.log(this.recipeData);
     $http({
       method: 'POST',
       url: 'http://localhost:3000/recipes/',
       data: this.recipeData
     }).then(response => {
-      console.log(response.data);
+      for (let i = 0; i < this.ingredientsData.length; i++) {
+        this.processIngredientCategories(response.data.id, this.ingredientsData[i]);
+      }
+      for (let i = 0; i < this.directionsData.length; i++) {
+        this.processDirectionsCategories(response.data.id, this.directionsData[i]);
+      }
+      for (let i = 0; i < this.tags.length; i++) {
+        console.log('TAGSSSSS', this.tags[i].id);
+        if (this.tags[i].selected) {
+          this.processTagsData(response.data.id, this.tags[i].id);
+        }
+      }
       this.recipeData = {};
+      this.getRecipes();
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.processTagsData = (id, tagId) => {
+    console.log(tagId);
+    $http({
+      method: 'POST',
+      url: 'http://localhost:3000/recipe_tags',
+      data: {
+        recipe_id: id,
+        tag_id: tagId
+      }
+    }).then(response => {
+      console.log(response.data);
+      this.tags = {};
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.processIngredientCategories = (id, ingredientsData) => {
+    console.log('ingredient categories');
+    console.log('ingredientsData:', ingredientsData);
+    $http({
+      method: 'POST',
+      url: 'http://localhost:3000/recipes/' + id + '/ingredient_categories',
+      data: {
+        title: ingredientsData.title,
+        recipe_id: id
+      }
+    }).then(response => {
+      console.log(response.data);
+      for (let i = 0; i < ingredientsData.ingredients.length; i++) {
+        this.processsIngredients(response.data.id, ingredientsData.ingredients[i]);
+      }
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.processsIngredients = (id, ingredientsData) => {
+    console.log('ingredients');
+    $http({
+      method: 'POST',
+      url: 'http://localhost:3000/ingredient_categories/' + id + '/ingredients',
+      data: {
+        title: ingredientsData.title,
+        ingredient_category_id: id
+      }
+    }).then(response => {
+      console.log(response.data);
+      this.ingredientsData = {};
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.processDirectionsCategories = (id, directionsData) => {
+    console.log('directions categories');
+    $http({
+      method: 'POST',
+      url: 'http://localhost:3000/recipes/' + id + '/directions_categories',
+      data: {
+        title: directionsData.title,
+        recipe_id: id
+      }
+    }).then(response => {
+      console.log(response.data);
+      for (let i = 0; i < directionsData.directions.length; i++) {
+        this.processsDirections(response.data.id, directionsData.directions[i]);
+      }
+    }).catch(error => {
+      console.log('error:', error);
+    })
+  }
+
+  this.processsDirections = (id, directionsData) => {
+    console.log('directions');
+    $http({
+      method: 'POST',
+      url: 'http://localhost:3000/directions_categories/' + id + '/directions',
+      data: {
+        title: directionsData.title,
+        directions_category_id: id
+      }
+    }).then(response => {
+      console.log(response.data);
+      this.directionsData = {};
     }).catch(error => {
       console.log('error:', error);
     })
